@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title> Đăng nhập Admin | Food Exploria </title>
+    <title> Đăng nhập Admin | HuyFood </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/manager_registered_success.css">
@@ -45,19 +45,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HuyFood</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active" ><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li class="active" ><a href="index.php">Trang chủ</a></li>
+            <li><a href="aboutus.php">Về chúng tôi</a></li>
+            <li><a href="contactus.php">Liên hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up </a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Đăng nhập </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập </a></li>
           </ul>
         </div>
 
