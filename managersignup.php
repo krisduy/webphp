@@ -68,7 +68,7 @@
     <div class="container" style="margin-top: 4%; margin-bottom: 2%;">
       <div class="col-md-5 col-md-offset-4">
       <div class="panel panel-primary">
-        <div class="panel-heading"> Tạo tài khoản </div>
+        <div class="panel-heading"> Tạo tài khoản mới</div>
         <div class="panel-body">
           
         <form role="form" action="manager_registered_success.php" method="POST">
@@ -77,7 +77,7 @@
           <div class="form-group col-xs-12">
             <label for="fullname"><span class="text-danger" style="margin-right: 5px;">*</span> Họ và tên: </label>
             <div class="input-group">
-              <input class="form-control" id="fullname" type="text" name="fullname" placeholder="Your Full Name" required="" autofocus="">
+              <input class="form-control" id="fullname" type="text" name="fullname" placeholder="Nhập họ và tên bạn" required="" autofocus="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
             </span>
@@ -90,7 +90,7 @@
           <div class="form-group col-xs-12">
             <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
             <div class="input-group">
-              <input class="form-control" id="username" type="text" name="username" placeholder="Your Username" required="">
+              <input class="form-control" id="username" type="text" name="username" placeholder="Nhập Username" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
             </span>
@@ -103,7 +103,7 @@
           <div class="form-group col-xs-12">
             <label for="email"><span class="text-danger" style="margin-right: 5px;">*</span> Email: </label>
             <div class="input-group">
-              <input class="form-control" id="email" type="email" name="email" placeholder="Email" required="">
+              <input class="form-control" id="email" type="email" name="email" placeholder="Nhập Email" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></label>
             </span>
@@ -116,7 +116,7 @@
           <div class="form-group col-xs-12">
             <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Số điện thoại: </label>
             <div class="input-group">
-              <input class="form-control" id="contact" type="text" name="contact" placeholder="Contact" required="">
+              <input class="form-control" id="contact" type="text" name="contact" placeholder="Nhập số điện thoại" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></label>
             </span>
@@ -129,7 +129,7 @@
           <div class="form-group col-xs-12">
             <label for="address"><span class="text-danger" style="margin-right: 5px;">*</span> Địa chỉ: </label>
             <div class="input-group">
-              <input class="form-control" id="address" type="text" name="address" placeholder="Address" required="">
+              <input class="form-control" id="address" type="text" name="address" placeholder="Địa chỉ" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></label>
             </span>
@@ -142,7 +142,7 @@
           <div class="form-group col-xs-12">
             <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Password: </label>
             <div class="input-group">
-              <input class="form-control" id="password" type="password" name="password" placeholder="Password" required="">
+              <input class="form-control" id="password" type="password" name="password" placeholder="Nhập Password" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
             </span>
@@ -159,7 +159,7 @@
           </div>
 
         </div>
-        <label style="margin-left: 5px;">or</label> <br>
+        <label style="margin-left: 5px;">hoặc</label> <br>
        <label style="margin-left: 5px;"><a href="managerlogin.php">Đã có tài khoản? Đăng Nhập.</a></label>
 
         </form>
