@@ -59,7 +59,7 @@
     <div class="jumbotron">
      <h1>Xin chào Admin, <br> Chào mừng đến với <span class="edit"> HUYFOOD </span></h1>
      <br>
-   <p>Tạo tài khoản mới</p>
+   <p>Vui lòng đăng kí để tiếp tục.</p>
     </div>
     </div>
 
