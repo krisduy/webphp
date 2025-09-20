@@ -30,7 +30,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
@@ -41,7 +41,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng kí <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="customersignup.php"> User Đăng Kí</a></li>
               <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
@@ -127,7 +127,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
     </body>
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy  </p>
+  <p> HUYFOOD 2017 | &copy  </p>
   <br>
   </footer>
 </html>
