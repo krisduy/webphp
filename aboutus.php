@@ -43,7 +43,7 @@ if(isset($_SESSION['login_user1'])){
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> CHÀO MỪNG <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
+            <li><a href="myrestaurant.php">thanh quản lí</a></li>
             <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> ĐĂNG XUẤT </a></li>
           </ul>
 <?php
@@ -99,7 +99,7 @@ else {
 
     <div class="wide">
         
-        <div class="tagline">NHANH <font color="red"><strong>-NGON</strong></font>,-RẺ <font color="green"><strong><em>-TIỆN</em>.</strong></font></div>
+        <div class="tagline">NHANH <font color="red"><strong>-NGON</strong></font>-RẺ <font color="green"><strong><em>-TIỆN</em>.</strong></font></div>
     </div>
 
     <div class="paragraph1">
