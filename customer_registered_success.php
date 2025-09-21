@@ -76,7 +76,7 @@ $conn->close();
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy  </p>
+  <p> HUYFOOD 2025 | &copy  </p>
   <br>
   </footer>
 </html>
