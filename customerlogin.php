@@ -10,7 +10,7 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
 <html>
 
   <head>
-    <title> Guest Login | Food Exploria </title>
+    <title> User Đăng Nhập | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/managerlogin.css">
@@ -20,30 +20,6 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
 
   <body>
 
-  <!--Back to top button..................................................................................-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </button>
-  <!--Javacript for back to top button....................................................................-->
-    <script type="text/javascript">
-      window.onscroll = function()
-      {
-        scrollFunction()
-      };
-
-      function scrollFunction(){
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
-        } else {
-          document.getElementById("myBtn").style.display = "none";
-        }
-      }
-
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
@@ -54,29 +30,29 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li ><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li ><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
+              <li> <a href="customersignup.php"> User Đăng Kí</a></li>
+              <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
       
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
+              <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
+              <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
    
             </ul>
             </li>
@@ -88,9 +64,9 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
 
     <div class="container">
     <div class="jumbotron">
-     <h1>Hi Guest,<br> Welcome to <span class="edit"> FoodExploria </span></h1>
+     <h1>Xin Chào,<br> Chào Mừng Bạn Đến Với <span class="edit"> HUYFOOD </span></h1>
      <br>
-   <p>Kindly LOGIN to continue.</p>
+   <p>Vui lòng đăng nhập để tiếp tục.</p>
     </div>
     </div>
 
@@ -98,7 +74,7 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
       <div class="col-md-5 col-md-offset-4">
         <label style="margin-left: 5px;color: red;"><span> <?php echo $error;  ?> </span></label>
       <div class="panel panel-primary">
-        <div class="panel-heading"> Login </div>
+        <div class="panel-heading"> Đăng Nhập </div>
         <div class="panel-body">
           
         <form action="" method="POST">
@@ -131,12 +107,12 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
 
         <div class="row">
           <div class="form-group col-xs-4">
-              <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Submit</button>
+              <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Đăng Nhập</button>
           </div>
 
         </div>
-        <label style="margin-left: 5px;">or</label> <br>
-       <label style="margin-left: 5px;"><a href="customersignup.php">Create a new account.</a></label>
+        <label style="margin-left: 5px;">hoặc</label> <br>
+       <label style="margin-left: 5px;"><a href="customersignup.php">Tạo tài khoản mới.</a></label>
 
         </form>
         </div>     
@@ -149,7 +125,7 @@ header("location: foodlist.php"); //Redirecting to myrestaurant Page
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy All Rights Reserved </p>
+  <p> HUYFOOD 2025 | &copy </p>
   <br>
   </footer>
 </html>
