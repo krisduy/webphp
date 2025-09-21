@@ -143,23 +143,24 @@ else {
 
      <div class="col-xs-12 line"><hr></div>
 
-     <div class="paragraph1" style="background-color: #fffbe6; padding: 20px; border-radius: 10px;">
+     <div class="paragraph1" style="background-color: #f0f8ff; padding: 20px; border-radius: 10px;">
   <h1>
     Chào Mừng Bạn Đến Với 
-    <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span>
+    <span style="color: #007acc; font-weight: bold;">HUYFOOD</span>
   </h1>
 
   <h4 style="color: #333;">
-    <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span> luôn sẵn sàng mang đến những trải nghiệm ẩm thực tuyệt vời cho bạn và khách ghé thăm.  
+    <span style="color: #007acc; font-weight: bold;">HUYFOOD</span> luôn sẵn sàng mang đến những trải nghiệm ẩm thực tuyệt vời cho bạn và khách ghé thăm.  
     Mỗi bữa ăn được chuẩn bị với tâm huyết và sự tận tâm, tạo nên những khoảnh khắc đáng nhớ.  
     Khách đến, bạn có dịp chia sẻ niềm vui và sự ấm áp qua những hương vị hấp dẫn, khiến mọi người đều cảm thấy hài lòng và vui vẻ.  
-    Chúng tôi muốn mỗi lần thưởng thức tại <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span> đều là một trải nghiệm dễ chịu, thân thiện và đầy hứng khởi.
+    Chúng tôi muốn mỗi lần thưởng thức tại <span style="color: #007acc; font-weight: bold;">HUYFOOD</span> đều là một trải nghiệm dễ chịu, thân thiện và đầy hứng khởi.
   </h4>
 
   <p style="color: #555;">
-    Chúng tôi tin rằng "Khách đến nhà như trời đến nhà" – và với <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span>, mỗi bữa ăn đều mang đến niềm vui và sự thoải mái trọn vẹn.
+    Chúng tôi tin rằng "Khách đến nhà như trời đến nhà" – và với <span style="color: #007acc; font-weight: bold;">HUYFOOD</span>, mỗi bữa ăn đều mang đến niềm vui và sự thoải mái trọn vẹn.
   </p>
 </div>
+
 
 
 
