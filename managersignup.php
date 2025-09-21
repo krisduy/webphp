@@ -57,7 +57,7 @@
 
     <div class="container">
     <div class="jumbotron">
-     <h1>Xin Chào Admin, <br> Chào Mừng Bạn Đến Với <span class="edit"> HUYFOOD </span></h1>
+     <h1>Xin Chào, <br> Chào Mừng Bạn Đến Với <span class="edit"> HUYFOOD </span></h1>
      <br>
    <p>Vui lòng đăng kí để tiếp tục.</p>
     </div>
