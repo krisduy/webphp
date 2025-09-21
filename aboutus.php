@@ -5,7 +5,7 @@ session_start();
 <html>
 
   <head>
-    <title> VỀ CHÚNG TÔI | HUYFOOD </title>
+    <title> Về Chúng Tôi | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/aboutus.css">
@@ -30,9 +30,9 @@ session_start();
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">TRANG CHỦ</a></li>
-            <li class="active"><a href="aboutus.php">VỀ CHÚNG TÔI</a></li>
-            <li><a href="contactus.php">LIÊN HỆ</a></li>
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li class="active"><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
 <?php
