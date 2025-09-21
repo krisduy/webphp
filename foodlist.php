@@ -11,7 +11,7 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 <html>
 
   <head>
-    <title> Explore | Food Exploria </title>
+    <title> Danh Mục | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/foodlist.css">
@@ -21,30 +21,6 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 
   <body>
 
-  <!--Back to top button..................................................................................-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </button>
-  <!--Javacript for back to top button....................................................................-->
-    <script type="text/javascript">
-      window.onscroll = function()
-      {
-        scrollFunction()
-      };
-
-      function scrollFunction(){
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
-        } else {
-          document.getElementById("myBtn").style.display = "none";
-        }
-      }
-
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
@@ -55,14 +31,14 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
 
           </ul>
 
@@ -83,8 +59,8 @@ else if (isset($_SESSION['login_user2'])) {
   ?>
            <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li class="active" ><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Food Zone </a></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart  (<?php
+            <li class="active" ><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng  (<?php
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
               echo "$count"; 
@@ -92,7 +68,7 @@ else if (isset($_SESSION['login_user2'])) {
               else
                 echo "0";
               ?>) </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
   <?php        
 }
@@ -101,19 +77,19 @@ else {
   ?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
-              <li> <a href="#"> Admin Sign-up</a></li>
+              <li> <a href="customersignup.php"> User Đăng Kí</a></li>
+              <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
+              <li> <a href="#"> Admin Đăng Kí</a></li>
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
-              <li> <a href="#"> Admin Login</a></li>
+              <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
+              <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
+              <li> <a href="#"> Admin Đăng Nhập</a></li>
             </ul>
             </li>
           </ul>
@@ -173,8 +149,8 @@ else {
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Food Exploria</h1>      
-    <p>Let food be thy medicine and medicine be thy food</p>
+    <h1>HUYFOOD</h1>      
+    <p>Mỗi bữa ăn, một trải nghiệm.</p>
   </div>
 </div>
 
@@ -217,7 +193,7 @@ if (mysqli_num_rows($result) > 0)
 <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
 <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
 <input type="hidden" name="hidden_RID" value="<?php echo $row["R_ID"]; ?>">
-<input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+<input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Thêm Vào Giỏ Hàng">
 </div>
 </form>
       
@@ -234,8 +210,8 @@ else
   <div class="container">
     <div class="jumbotron">
       <center>
-         <label style="margin-left: 5px;color: red;"> <h1>Oops! No food is available.</h1> </label>
-        <p>Stay Hungry...! :P</p>
+         <label style="margin-left: 5px;color: red;"> <h1>Oops! Hết đồ ăn mất rồi.</h1> </label>
+        <p>Chọn món khác bạn nhé! :P</p>
       </center>
        
     </div>
