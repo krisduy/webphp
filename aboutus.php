@@ -42,18 +42,18 @@ if(isset($_SESSION['login_user1'])){
 
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> CHÀO MỪNG <?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào <?php echo $_SESSION['login_user1']; ?> </a></li>
             <li><a href="myrestaurant.php">thanh quản lí</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> ĐĂNG XUẤT </a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
 <?php
 }
 else if (isset($_SESSION['login_user2'])) {
   ?>
            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> CHÀO MỪNG <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> DANH MỤC MÓN ĂN </a></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> GIỎ HÀNG 
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng 
             (<?php
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
@@ -63,7 +63,7 @@ else if (isset($_SESSION['login_user2'])) {
                 echo "0";
               ?>)
             </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> ĐĂNG XUẤT </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
   <?php        
 }
@@ -72,18 +72,18 @@ else {
   ?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> KHÁCH HÀNG ĐĂNG KÍ</a></li>
-              <li> <a href="managersignup.php"> ADMIN ĐĂNG KÍ</a></li>
+              <li> <a href="customersignup.php"> User Đăng Kí</a></li>
+              <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
           
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> KHÁCH HÀNG ĐĂNG NHẬP</a></li>
-              <li> <a href="managerlogin.php"> ADMIN ĐĂNG NHẬP</a></li>
+              <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
+              <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
 
             </ul>
             </li>
@@ -99,7 +99,7 @@ else {
 
     <div class="wide">
         
-        <div class="tagline">NHANH <font color="red"><strong>-NGON</strong></font>-RẺ <font color="green"><strong><em>-TIỆN</em>.</strong></font></div>
+        <div class="tagline">Nhanh <font color="red"><strong>-Ngon</strong></font>-Rẻ<font color="green"><strong><em>-Tiện</em>.</strong></font></div>
     </div>
 
     <div class="paragraph1">
