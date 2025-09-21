@@ -145,7 +145,7 @@ else {
 
      <div class="paragraph1" style="background-color: #f0f8ff; padding: 20px; border-radius: 10px;">
   <h1>
-    Chào Mừng Bạn Đến Với 
+    <span style="color: #ff6600; font-weight: bold;">Chào Mừng Bạn Đến Với</span> 
     <span style="color: #007acc; font-weight: bold;">HUYFOOD</span>
   </h1>
 
@@ -160,8 +160,6 @@ else {
     Chúng tôi tin rằng "Khách đến nhà như trời đến nhà" – và với <span style="color: #007acc; font-weight: bold;">HUYFOOD</span>, mỗi bữa ăn đều mang đến niềm vui và sự thoải mái trọn vẹn.
   </p>
 </div>
-
-
 
 
 
