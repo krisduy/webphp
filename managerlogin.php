@@ -35,9 +35,9 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li ><a href="index.php">TRANG CHỦ</a></li>
-            <li><a href="aboutus.php">VỀ CHÚNG TÔI</a></li>
-            <li><a href="contactus.php">LIÊN HỆ</a></li>
+            <li ><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -64,7 +64,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 
     <div class="container">
     <div class="jumbotron">
-     <h1>Xin chào Admin,<br> Chào mừng đến với <span class="edit"> HUYFOOD </span></h1>
+     <h1>Xin Chào Admin,<br> Chào Mừng Bạn Đến Với <span class="edit"> HUYFOOD </span></h1>
      <br>
    <p>Vui lòng đăng nhập để tiếp tục.</p>
     </div>
@@ -127,7 +127,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
     </body>
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> HUYFOOD 2017 | &copy  </p>
+  <p> HUYFOOD 2025 | &copy  </p>
   <br>
   </footer>
 </html>
