@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" type = "text/css" href ="css/index.css">
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  
+
   <body>
 
 
@@ -105,7 +105,7 @@ else {
       	<div class="col-xs-5 line"><hr></div>
         <div class="col-xs-2 logo"><img src="images/logo.jpg"></div>
         <div class="col-xs-5 line"><hr></div>
-        <div class="tagline">THƯỞNG THỨC NHANH – VUI TRỌN VỊ!</div>
+        <div class="tagline">Thưởng thức nhanh – Vui trọn vị!</div>
     </div>
     <br>
     <!--<center><img src="images/orderimg.png" alt="image" height="50%"></center>-->
@@ -129,7 +129,7 @@ else {
 
         <div class="col-xs-4 box">
           <h2><strong>Không Giới Hạn<br> Số Lượng Đặt Hàng <br> </strong><hr> </h2>
-          <h4>Bạn Đặt Bao Nhiêu<br> Tùy Ý.<br></h4>
+          <h4>Bạn Muốn Đặt Bao Nhiêu<br> Tùy Ý.<br></h4>
         </div>
         <div class="col-xs-4 box">
           <h2><strong>Theo Dõi Đơn Hàng<br> Trực Tiếp <br> </strong><hr> </h2>
@@ -143,20 +143,24 @@ else {
 
      <div class="col-xs-12 line"><hr></div>
 
-     <div class="paragraph1">
-  <h1>Chào Mừng Bạn Đến Với HUYFOOD</h1>
+     <div class="paragraph1" style="background-color: #fffbe6; padding: 20px; border-radius: 10px;">
+  <h1>
+    Chào Mừng Bạn Đến Với 
+    <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span>
+  </h1>
 
-  <h4>
-    HUYFOOD luôn sẵn sàng mang đến những trải nghiệm ẩm thực tuyệt vời cho bạn và khách ghé thăm.  
+  <h4 style="color: #333;">
+    <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span> luôn sẵn sàng mang đến những trải nghiệm ẩm thực tuyệt vời cho bạn và khách ghé thăm.  
     Mỗi bữa ăn được chuẩn bị với tâm huyết và sự tận tâm, tạo nên những khoảnh khắc đáng nhớ.  
     Khách đến, bạn có dịp chia sẻ niềm vui và sự ấm áp qua những hương vị hấp dẫn, khiến mọi người đều cảm thấy hài lòng và vui vẻ.  
-    Chúng tôi muốn mỗi lần thưởng thức tại HUYFOOD đều là một trải nghiệm dễ chịu, thân thiện và đầy hứng khởi.
+    Chúng tôi muốn mỗi lần thưởng thức tại <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span> đều là một trải nghiệm dễ chịu, thân thiện và đầy hứng khởi.
   </h4>
 
-  <p>
-    Chúng tôi tin rằng "Khách đến nhà như trời đến nhà" – và với HUYFOOD, mỗi bữa ăn đều mang đến niềm vui và sự thoải mái trọn vẹn.
+  <p style="color: #555;">
+    Chúng tôi tin rằng "Khách đến nhà như trời đến nhà" – và với <span style="color: #ff4500; font-weight: bold;">HUYFOOD</span>, mỗi bữa ăn đều mang đến niềm vui và sự thoải mái trọn vẹn.
   </p>
 </div>
+
 
 
 
