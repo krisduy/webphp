@@ -103,13 +103,13 @@ else {
       	<div class="col-xs-5 line"><hr></div>
         <div class="col-xs-2 logo"><img src="images/logo.jpg"></div>
         <div class="col-xs-5 line"><hr></div>
-        <div class="tagline">Thưởng thức nhanh – Vui trọn vị!</div>
+        <div class="tagline">THƯỞNG THỨC NHANH – VUI TRỌN VỊ!</div>
     </div>
     <br>
     <!--<center><img src="images/orderimg.png" alt="image" height="50%"></center>-->
     <div class="orderblock">
-    <h2>Bạn đang cảm thấy đói?</h2>
-    <center><a class="btn btn-success btn-lg" href="customerlogin.php" role="button" > Đặt ngay </a></center>
+    <h2>Bạn Đang Cảm Thấy Đói?</h2>
+    <center><a class="btn btn-success btn-lg" href="customerlogin.php" role="button" > Đặt Hàng Ngay! </a></center>
     </div>
 
     <div class="col-xs-12 line"><hr></div>
@@ -127,7 +127,7 @@ else {
 
         <div class="col-xs-4 box">
           <h2><strong>Không Giới Hạn<br> Số Lượng Đặt Hàng <br> </strong><hr> </h2>
-          <h4>Bạn đặt bao nhiêu<br> tùy ý<br> không giới hạn.</h4>
+          <h4>Bạn Đặt Bao Nhiêu<br> Tùy Ý.<br></h4>
         </div>
         <div class="col-xs-4 box">
           <h2><strong>Theo Dõi Đơn Hàng<br> Trực Tiếp <br> </strong><hr> </h2>
@@ -145,21 +145,23 @@ else {
   <h1>Chào Mừng Bạn Đến Với HUYFOOD</h1>
 
   <h4>
-    Nhớ những lần khách ghé thăm bất ngờ, kèm theo những yêu cầu dễ thương muốn thưởng thức món ngon ngay tại nhà.  
-    Người thì thích đồ chiên nóng hổi, người thì mê burger hay món tráng miệng hấp dẫn.  
-    Dường như mục đích chính là thưởng thức HUYFOOD hơn là gặp gỡ bạn, nhưng ai mà không thích được chiều chuộng cơ chứ!
+    HUYFOOD luôn sẵn sàng mang đến những trải nghiệm ẩm thực tuyệt vời cho bạn và khách ghé thăm.  
+    Mỗi bữa ăn được chuẩn bị với tâm huyết và sự tận tâm, tạo nên những khoảnh khắc đáng nhớ.  
+    Khách đến, bạn có dịp chia sẻ niềm vui và sự ấm áp qua những hương vị hấp dẫn, khiến mọi người đều cảm thấy hài lòng và vui vẻ.  
+    Chúng tôi muốn mỗi lần thưởng thức tại HUYFOOD đều là một trải nghiệm dễ chịu, thân thiện và đầy hứng khởi.
   </h4>
 
   <p>
-    Dù sao đi nữa, chúng tôi vẫn tin rằng "Khách đến nhà như trời đến nhà" – và với HUYFOOD, tình yêu và món ngon luôn ở đó!
+    Chúng tôi tin rằng "Khách đến nhà như trời đến nhà" – và với HUYFOOD, mỗi bữa ăn đều mang đến niềm vui và sự thoải mái trọn vẹn.
   </p>
 </div>
 
 
 
+
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> HUYFOOD | &copy  </p>
+  <p> HUYFOOD 2025 | &copy  </p>
   <br>
   </footer>
 </html>
