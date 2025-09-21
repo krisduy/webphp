@@ -150,7 +150,7 @@ else {
 <div class="jumbotron">
   <div class="container text-center">
     <h1>HUYFOOD</h1>      
-    <p>Mỗi bữa ăn, một trải nghiệm.</p>
+    <p>Thưởng thức hương vị, tận hưởng niềm vui.</p>
   </div>
 </div>
 
@@ -229,7 +229,7 @@ else
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy  </p>
+  <p> HUYFOOD 2025 | &copy  </p>
   <br>
   </footer>
 </html>
