@@ -28,7 +28,7 @@ $stmt -> store_result();
 if ($stmt->fetch())  
 {
 	$_SESSION['login_user1']=$username; 
-	header("location: myrestaurant.php"); 
+	header("location: view_food_items.php"); 
 } else {
 $error = "Username hoặc Email không tồn tại.";
 }

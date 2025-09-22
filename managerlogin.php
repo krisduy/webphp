@@ -2,7 +2,7 @@
 include('login_m.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user1'])){
-header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
+header("location: view_food_items.php"); //Redirecting to myrestaurant Page
 }
 ?>
 
