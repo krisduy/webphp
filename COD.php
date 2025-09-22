@@ -125,7 +125,7 @@ else {
   $number = $num1.$num2.$num3;
 ?>
 
-<h3 class="text-center"> <strong>Mã Đơn Hàng CỦa Bạn:</strong> <span style="color: blue;"><?php echo "$number"; ?></span> </h3>
+<h3 class="text-center"> <strong>Mã Đơn Hàng Của Bạn:</strong> <span style="color: blue;"><?php echo "$number"; ?></span> </h3>
 
 
  <div class="container" >
