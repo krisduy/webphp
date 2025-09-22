@@ -43,7 +43,7 @@ if(isset($_SESSION['login_user1'])){
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">thanh quản lí</a></li>
+            <li><a href="view_food_items.php">thanh quản lí</a></li>
             <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
 <?php
