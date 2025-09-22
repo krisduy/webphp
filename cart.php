@@ -11,6 +11,7 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 
   <head>
     <title> Giỏ Hàng | HUYFOOD </title>
+    <title> Giỏ Hàng | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/cart.css">
@@ -30,10 +31,14 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.php">HUYFOOD</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
             <li><a href="index.php">Trang Chủ</a></li>
             <li><a href="aboutus.php">Về Chúng Tôi</a></li>
             <li><a href="contactus.php">Liên Hệ</a></li>

@@ -70,12 +70,20 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
     	<div class="col-xs-3" style="text-align: center;">
 
     	<div class="list-group">
+<<<<<<< HEAD
     		<a href="myrestaurant.php" class="list-group-item ">Nhà Hàng</a>
     		<a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
     		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
     		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
     		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
         <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
+=======
+    		<a href="view_food_items.php" class="list-group-item ">View Food Items</a>
+    		<a href="add_food_items.php" class="list-group-item active">Add Food Items</a>
+    		<a href="edit_food_items.php" class="list-group-item ">Edit Food Items</a>
+    		<a href="delete_food_items.php" class="list-group-item ">Delete Food Items</a>
+        <a href="view_order_details.php" class="list-group-item ">View Order Details</a>
+>>>>>>> 1833c4e (sửa add)
     	</div>
     </div>
     

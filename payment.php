@@ -38,6 +38,9 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
             <li><a href="index.php">Trang Chủ</a></li>
             <li><a href="aboutus.php">Về Chúng Tôi</a></li>
             <li><a href="contactus.php">Liên Hệ</a></li>
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
 
           </ul>
 
@@ -148,6 +151,7 @@ $gtotal = 0;
         ?>
         <div class="container">
           <div class="jumbotron">
+            <h1>Chọn Phương Thức Thanh Toán</h1>
             <h1>Chọn Phương Thức Thanh Toán</h1>
           </div>
         </div>
