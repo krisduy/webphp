@@ -10,7 +10,7 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
 <html>
 
   <head>
-    <title> Manager Login | Food Exploria </title>
+    <title> Đăng Nhập Admin | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/add_food_items.css">
@@ -19,31 +19,6 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <body>
-
-  <!--Back to top button..................................................................................-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </button>
-  <!--Javacript for back to top button....................................................................-->
-    <script type="text/javascript">
-      window.onscroll = function()
-      {
-        scrollFunction()
-      };
-
-      function scrollFunction(){
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
-        } else {
-          document.getElementById("myBtn").style.display = "none";
-        }
-      }
-
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
@@ -54,20 +29,20 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?> </a></li>
-            <li class="active"> <a href="managerlogin.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?> </a></li>
+            <li class="active"> <a href="managerlogin.php">Trang Quản Lí</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
         </div>
 
@@ -79,8 +54,8 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
 
 <div class="container">
     <div class="jumbotron">
-     <h1>Hello Manager! </h1>
-     <p>Manage all your restaurant from here</p>
+     <h1>Xin Chào Admin! </h1>
+     <p>Quản Lí Cửa Hàng Tại Đây.</p>
 
     </div>
     </div>
@@ -95,12 +70,12 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
     	<div class="col-xs-3" style="text-align: center;">
 
     	<div class="list-group">
-    		<a href="myrestaurant.php" class="list-group-item ">My Restaurant</a>
-    		<a href="view_food_items.php" class="list-group-item ">View Food Items</a>
-    		<a href="add_food_items.php" class="list-group-item active">Add Food Items</a>
-    		<a href="edit_food_items.php" class="list-group-item ">Edit Food Items</a>
-    		<a href="delete_food_items.php" class="list-group-item ">Delete Food Items</a>
-        <a href="view_order_details.php" class="list-group-item ">View Order Details</a>
+    		<a href="myrestaurant.php" class="list-group-item ">Nhà Hàng</a>
+    		<a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
+    		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
+    		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
+    		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
+        <a href="view_order_details.php" class="list-group-item ">XEm Chi Tiết Đơn Hàng</a>
     	</div>
     </div>
     
@@ -111,26 +86,26 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
       <div class="form-area" style="padding: 0px 100px 100px 100px;">
         <form action="add_food_items1.php" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> ADD NEW FOOD ITEM HERE </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Thêm Món Ăn Tại Đây </h3>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Your Food name" required="">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Tên Món Ăn" required="">
           </div>     
 
           <div class="form-group">
-            <input type="text" class="form-control" id="price" name="price" placeholder="Your Food Price (INR)" required="">
+            <input type="text" class="form-control" id="price" name="price" placeholder="Giá (VNĐ)" required="">
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="description" name="description" placeholder="Your Food Description" required="">
+            <input type="text" class="form-control" id="description" name="description" placeholder="Mô Tả" required="">
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="images_path" name="images_path" placeholder="Your Food Image Path [images/<filename>.<extention>]" required="">
+            <input type="text" class="form-control" id="images_path" name="images_path" placeholder="Ảnh Món Ăn [images/<filename>.<extention>]" required="">
           </div>
 
           <div class="form-group">
-          <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> ADD FOOD </button>    
+          <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> Thêm Món Ăn </button>    
       </div>
         </form>
 
@@ -144,7 +119,7 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy All Rights Reserved </p>
+  <p> HUYFOOD 2025 | &copy </p>
   <br>
   </footer>
 </html>
