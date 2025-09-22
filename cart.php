@@ -10,7 +10,7 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 <html>
 
   <head>
-    <title> Cart | Food Exploria </title>
+    <title> Giỏ Hàng | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/cart.css">
@@ -19,31 +19,6 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <body>
-
-  <!--Back to top button..................................................................................-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </button>
-  <!--Javacript for back to top button....................................................................-->
-    <script type="text/javascript">
-      window.onscroll = function()
-      {
-        scrollFunction()
-      };
-
-      function scrollFunction(){
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
-        } else {
-          document.getElementById("myBtn").style.display = "none";
-        }
-      }
-
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
@@ -54,14 +29,14 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
 
           </ul>
 
@@ -72,18 +47,18 @@ if(isset($_SESSION['login_user1'])){
 
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="myrestaurant.php">Trang Quản Lí</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
 <?php
 }
 else if (isset($_SESSION['login_user2'])) {
   ?>
            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Food Zone </a></li>
-            <li class="active" ><a href="foodlist.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
+            <li class="active" ><a href="foodlist.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng
              (<?php
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
@@ -93,7 +68,7 @@ else if (isset($_SESSION['login_user2'])) {
                 echo "0";
               ?>)
               </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
   <?php        
 }
@@ -102,19 +77,19 @@ else {
   ?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
-              <li> <a href="#"> Admin Sign-up</a></li>
+              <li> <a href="customersignup.php"> User Đăng Kí</a></li>
+              <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
+              <li> <a href="#"> Admin Đăng Kí</a></li>
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
-              <li> <a href="#"> Admin Login</a></li>
+              <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
+              <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
+              <li> <a href="#"> Admin Đăng Nhập</a></li>
             </ul>
             </li>
           </ul>
@@ -136,8 +111,8 @@ if(!empty($_SESSION["cart"]))
   ?>
   <div class="container">
       <div class="jumbotron">
-        <h1>Your Shopping Cart</h1>
-        <p>Looks tasty...!!!</p>
+        <h1>Giỏ Hàng Của Bạn</h1>
+        <p>Có vẻ ngon đấy...!!!</p>
         
       </div>
       
@@ -146,11 +121,11 @@ if(!empty($_SESSION["cart"]))
 <table class="table table-striped">
   <thead class="thead-dark">
 <tr>
-<th width="40%">Food Name</th>
-<th width="10%">Quantity</th>
-<th width="20%">Price Details</th>
-<th width="15%">Order Total</th>
-<th width="5%">Action</th>
+<th width="40%">Tên Món Ăn</th>
+<th width="10%">Số Lượng</th>
+<th width="20%">Giá Chi Tiết</th>
+<th width="15%">Tổng Đơn Hàng</th>
+<th width="5%">Hành Động</th>
 </tr>
 </thead>
 
@@ -166,20 +141,20 @@ foreach($_SESSION["cart"] as $keys => $values)
 <td><?php echo $values["food_quantity"] ?></td>
 <td>&#8377; <?php echo $values["food_price"]; ?></td>
 <td>&#8377; <?php echo number_format($values["food_quantity"] * $values["food_price"], 2); ?></td>
-<td><a href="cart.php?action=delete&id=<?php echo $values["food_id"]; ?>"><span class="text-danger">Remove</span></a></td>
+<td><a href="cart.php?action=delete&id=<?php echo $values["food_id"]; ?>"><span class="text-danger">Xóa</span></a></td>
 </tr>
 <?php 
 $total = $total + ($values["food_quantity"] * $values["food_price"]);
 }
 ?>
 <tr>
-<td colspan="3" align="right">Total</td>
+<td colspan="3" align="right">Tổng</td>
 <td align="right">&#8377; <?php echo number_format($total, 2); ?></td>
 <td></td>
 </tr>
 </table>
 <?php
-  echo '<a href="cart.php?action=empty"><button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Empty Cart</button></a>&nbsp;<a href="foodlist.php"><button class="btn btn-warning">Continue Shopping</button></a>&nbsp;<a href="payment.php"><button class="btn btn-success pull-right"><span class="glyphicon glyphicon-share-alt"></span> Check Out</button></a>';
+  echo '<a href="cart.php?action=empty"><button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa Giỏ Hàng</button></a>&nbsp;<a href="foodlist.php"><button class="btn btn-warning">Tiếp Tục Đặt Món</button></a>&nbsp;<a href="payment.php"><button class="btn btn-success pull-right"><span class="glyphicon glyphicon-share-alt"></span> Thanh Toán</button></a>';
 ?>
 </div>
 <br><br><br><br><br><br><br>
@@ -190,8 +165,8 @@ if(empty($_SESSION["cart"]))
   ?>
   <div class="container">
       <div class="jumbotron">
-        <h1>Your Shopping Cart</h1>
-        <p>Oops! We can't smell any food here. Go back and <a href="foodlist.php">order now.</a></p>
+        <h1>Giỏ Hàng Của Bạn.</h1>
+        <p>Oops! Có Vẻ Bạn Chưa Đặt Gì. Quay lại Và <a href="foodlist.php">Đặt Hàng Ngay.</a></p>
         
       </div>
       
@@ -226,7 +201,7 @@ echo '<script>window.location="cart.php"</script>';
 }
 else
 {
-echo '<script>alert("Products already added to cart")</script>';
+echo '<script>alert("Món Ăn Đã Được Thêm Vào Giỏ Hàng")</script>';
 echo '<script>window.location="cart.php"</script>';
 }
 }
@@ -251,7 +226,7 @@ foreach($_SESSION["cart"] as $keys => $values)
 if($values["food_id"] == $_GET["id"])
 {
 unset($_SESSION["cart"][$keys]);
-echo '<script>alert("Food has been removed")</script>';
+echo '<script>alert("Món Ăn Đã Được Xóa")</script>';
 echo '<script>window.location="cart.php"</script>';
 }
 }
@@ -266,7 +241,7 @@ foreach($_SESSION["cart"] as $keys => $values)
 {
 
 unset($_SESSION["cart"]);
-echo '<script>alert("Cart is made empty!")</script>';
+echo '<script>alert("Giỏ Hàng Trống!")</script>';
 echo '<script>window.location="cart.php"</script>';
 
 }
@@ -283,7 +258,7 @@ echo '<script>window.location="cart.php"</script>';
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy All Rights Reserved </p>
+  <p> HUYFOOD 2025 | &copy </p>
   <br>
   </footer>
 </html>
