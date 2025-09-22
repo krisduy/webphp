@@ -188,7 +188,10 @@ if (mysqli_num_rows($result) > 0)
 <img src="<?php echo $row["images_path"]; ?>" class="img-responsive">
 <h5 class="text-info"><?php echo $row["name"]; ?></h5>
 <h5 class="text-info"><?php echo $row["description"]; ?></h5>
-<h5 class="text-danger">&#8377; <?php echo $row["price"]; ?>/-</h5>
+<h5 class="text-danger">
+  <?php echo number_format($row["price"], 0, ',', '.'); ?> VNĐ
+</h5>
+
 <h5 class="text-info">Số lượng: <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> </h5>
 <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
 <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
@@ -196,7 +199,6 @@ if (mysqli_num_rows($result) > 0)
 <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Thêm Vào Giỏ Hàng">
 </div>
 </form>
-      
      
 </div>
 
