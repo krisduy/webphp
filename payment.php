@@ -62,19 +62,19 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
     foreach($_SESSION["cart"] as $keys => $values){
         $F_ID = $values["food_id"];
         $foodname = $values["food_name"];
+        $quantity = $values["food_quantity"];
         $price = $values["food_price"];
+        $total = ($quantity * $price);
+        $R_ID = $values["R_ID"];
+        $username = $_SESSION["login_user2"];
+        $order_date = date('Y-m-d');
 
-        // Tính tổng tiền
-        $gtotal += ($values["food_quantity"] * $price);
+        $gtotal += $total;
 
-        // --- Chỉ cập nhật vào bảng food ---
-        $check_food = "SELECT * FROM food WHERE F_ID='$F_ID'";
-        $res_check = $conn->query($check_food);
-        if($res_check->num_rows == 0){
-            $insert_food = "INSERT INTO food (F_ID, name, price, description, images_path)
-                            VALUES ('$F_ID','$foodname','$price','Món mới','images/default.png')";
-            $conn->query($insert_food);
-        }
+        // Thêm đơn hàng vào bảng ORDERS
+        $query = "INSERT INTO orders (F_ID, foodname, price, quantity, order_date, username, R_ID) 
+                  VALUES ('$F_ID','$foodname','$price','$quantity','$order_date','$username','$R_ID')";
+        $conn->query($query);
     }
 ?>
     <div class="container">

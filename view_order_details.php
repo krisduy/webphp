@@ -3,30 +3,20 @@ include('session_m.php');
 require 'connection.php';
 $conn = Connect();
 
-if (!isset($login_session)) {
-    header('Location: managerlogin.php'); // Redirecting To Login Page
+if(!isset($login_session)){
+    header("location: managerlogin.php");
     exit();
 }
-
-// Lấy F_ID từ URL nếu có
-$F_ID = isset($_GET['F_ID']) ? intval($_GET['F_ID']) : 0;
-
-// Lấy dữ liệu từ bảng food
-$sql = "SELECT * FROM food";
-if ($F_ID > 0) {
-    $sql .= " WHERE F_ID = $F_ID";
-}
-$sql .= " ORDER BY F_ID DESC";
-
-$result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chi Tiết Món Ăn | HUYFOOD</title>
+  <title>Chi Tiết Đơn Hàng | HUYFOOD</title>
   <link rel="stylesheet" type="text/css" href="css/view_order_details.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -45,49 +35,67 @@ $result = mysqli_query($conn, $sql);
 
 <div class="container" style="margin-top:70px;">
   <div class="jumbotron">
-    <h1>Chi Tiết Món Ăn</h1>
-    <?php 
-      if ($F_ID > 0) echo "<p>Hiển thị món ăn ID: $F_ID</p>";
-      else echo "<p>Hiển thị tất cả món ăn</p>";
-    ?>
+    <h1>Chi Tiết Đơn Hàng</h1>
+    <p>Hiển thị tất cả đơn hàng</p>
   </div>
 
   <div class="col-xs-12">
     <div class="form-area" style="padding: 0px 50px 50px 50px;">
-      <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> DANH SÁCH MÓN ĂN </h3>
+      <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> DANH SÁCH ĐƠN HÀNG </h3>
 
-      <?php if(mysqli_num_rows($result) > 0) { ?>
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Food ID</th>
-              <th>Tên Món</th>
-              <th>Giá</th>
-              <th>Mô Tả</th>
-              <th>Ảnh</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php while($row = mysqli_fetch_assoc($result)) { ?>
-              <tr>
-                <td><?php echo $row["F_ID"]; ?></td>
-                <td><?php echo $row["name"]; ?></td>
-                <td><?php echo number_format($row["price"],0,',','.'); ?> VNĐ</td>
-                <td><?php echo !empty($row["description"]) ? $row["description"] : '-'; ?></td>
-                <td>
-                  <?php if(!empty($row["images_path"])): ?>
-                    <img src="<?php echo $row["images_path"]; ?>" width="80" height="60" style="border-radius:5px;">
-                  <?php else: ?>
-                    -
-                  <?php endif; ?>
-                </td>
-              </tr>
-            <?php } ?>
-          </tbody>
-        </table>
-      <?php } else {
-        echo "<h4><center>Chưa có món ăn nào</center></h4>";
-      } ?>
+<?php
+// JOIN với bảng food để lấy ảnh và mô tả
+$sql = "SELECT o.order_ID, o.F_ID, o.foodname, o.price, o.quantity, o.username, o.order_date,
+        f.description, f.images_path
+        FROM orders o
+        LEFT JOIN food f ON o.F_ID = f.F_ID
+        ORDER BY o.order_date DESC";
+
+$result = mysqli_query($conn, $sql);
+
+if(mysqli_num_rows($result) > 0){
+?>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Order ID</th>
+        <th>Food ID</th>
+        <th>Tên Món</th>
+        <th>Giá</th>
+        <th>Mô Tả</th>
+        <th>Ảnh</th>
+        <th>Số Lượng</th>
+        <th>Khách Hàng</th>
+        <th>Ngày Đặt</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php while($row = mysqli_fetch_assoc($result)){ ?>
+      <tr>
+        <td><?php echo $row["order_ID"]; ?></td>
+        <td><?php echo $row["F_ID"]; ?></td>
+        <td><?php echo $row["foodname"]; ?></td>
+        <td><?php echo number_format($row["price"],0,',','.'); ?> VNĐ</td>
+        <td><?php echo !empty($row["description"]) ? $row["description"] : '-'; ?></td>
+        <td>
+          <?php if(!empty($row["images_path"])): ?>
+            <img src="<?php echo $row["images_path"]; ?>" width="80" height="60" style="border-radius:5px;">
+          <?php else: ?>
+            -
+          <?php endif; ?>
+        </td>
+        <td><?php echo $row["quantity"]; ?></td>
+        <td><?php echo $row["username"]; ?></td>
+        <td><?php echo $row["order_date"]; ?></td>
+      </tr>
+    <?php } ?>
+    </tbody>
+  </table>
+<?php
+} else {
+  echo "<h4><center>Chưa có đơn hàng nào</center></h4>";
+}
+?>
     </div>
   </div>
 </div>
