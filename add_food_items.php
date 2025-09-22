@@ -75,7 +75,7 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
     		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
     		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
     		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
-        <a href="view_order_details.php" class="list-group-item ">XEm Chi Tiết Đơn Hàng</a>
+        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
     	</div>
     </div>
     
