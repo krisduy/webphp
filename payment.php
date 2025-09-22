@@ -10,7 +10,7 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 <html>
 
   <head>
-    <title> Cart | Food Exploria </title>
+    <title> Thanh Toán | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/payment.css">
@@ -20,30 +20,6 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 
   <body>
 
-  <!--Back to top button..................................................................................-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </button>
-  <!--Javacript for back to top button....................................................................-->
-    <script type="text/javascript">
-      window.onscroll = function()
-      {
-        scrollFunction()
-      };
-
-      function scrollFunction(){
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
-        } else {
-          document.getElementById("myBtn").style.display = "none";
-        }
-      }
-
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
@@ -54,14 +30,14 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Food Exploria</a>
+          <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
 
           </ul>
 
@@ -73,17 +49,17 @@ if(isset($_SESSION['login_user1'])){
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="myrestaurant.php">Trang Quản Lí</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
 <?php
 }
 else if (isset($_SESSION['login_user2'])) {
   ?>
            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Food Zone </a></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng
              (<?php
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
@@ -93,7 +69,7 @@ else if (isset($_SESSION['login_user2'])) {
                 echo "0";
               ?>)
               </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
   <?php        
 }
@@ -102,19 +78,19 @@ else {
   ?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
-              <li> <a href="#"> Admin Sign-up</a></li>
+              <li> <a href="customersignup.php"> User Đăng Kí</a></li>
+              <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
+              <li> <a href="#"> Admin Đăng Kí</a></li>
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
-              <li> <a href="#"> Admin Login</a></li>
+              <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
+              <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
+              <li> <a href="#"> Admin Đăng Nhập</a></li>
             </ul>
             </li>
           </ul>
@@ -159,8 +135,8 @@ $gtotal = 0;
         ?>
         <div class="container">
           <div class="jumbotron">
-            <h1>Something went wrong!</h1>
-            <p>Try again later.</p>
+            <h1>Đã xảy ra lỗi!</h1>
+            <p>Vui lòng thử lại sau.</p>
           </div>
         </div>
 
@@ -172,17 +148,16 @@ $gtotal = 0;
         ?>
         <div class="container">
           <div class="jumbotron">
-            <h1>Choose your payment option</h1>
+            <h1>Chọn Phương Thức Thanh Toán</h1>
           </div>
         </div>
         <br>
-<h1 class="text-center">Grand Total: &#8377;<?php echo "$gtotal"; ?>/-</h1>
-<h5 class="text-center">including all service charges. (no delivery charges applied)</h5>
+<h1 class="text-center">Tổng Giá Trị Đơn Hàng: &#8377;<?php echo "$gtotal"; ?>/-</h1>
+<h5 class="text-center">Đã bao gồm tất cả phụ phí dịch vụ. (Không áp dụng phí giao hàng)</h5>
 <br>
 <h1 class="text-center">
-  <a href="cart.php"><button class="btn btn-warning"><span class="glyphicon glyphicon-circle-arrow-left"></span> Go back to cart</button></a>
-  <a href="onlinepay.php"><button class="btn btn-success"><span class="glyphicon glyphicon-credit-card"></span> Pay Online</button></a>
-  <a href="COD.php"><button class="btn btn-success"><span class="glyphicon glyphicon-"></span> Cash On Delivery</button></a>
+  <a href="cart.php"><button class="btn btn-warning"><span class="glyphicon glyphicon-circle-arrow-left"></span> Quay Lại Giỏ Hàng</button></a>
+  <a href="COD.php"><button class="btn btn-success"><span class="glyphicon glyphicon-"></span> Thanh Toán Khi Nhận Hàng</button></a>
 </h1>
         
 
@@ -192,7 +167,7 @@ $gtotal = 0;
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy All Rights Reserved </p>
+  <p> HUYFOOD 2025 | &copy </p>
   <br>
   </footer>
 </html>
