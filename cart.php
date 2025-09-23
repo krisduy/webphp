@@ -144,8 +144,8 @@ foreach($_SESSION["cart"] as $keys => $values)
 <tr>
 <td><?php echo $values["food_name"]; ?></td>
 <td><?php echo $values["food_quantity"] ?></td>
-<td>&#8377; <?php echo $values["food_price"]; ?></td>
-<td>&#8377; <?php echo number_format($values["food_quantity"] * $values["food_price"], 2); ?></td>
+<td><?php echo $values["food_price"]; ?> VND</td>
+<td><?php echo number_format($values["food_quantity"] * $values["food_price"], 2); ?></td>
 <td><a href="cart.php?action=delete&id=<?php echo $values["food_id"]; ?>"><span class="text-danger">Xóa</span></a></td>
 </tr>
 <?php 
@@ -154,7 +154,7 @@ $total = $total + ($values["food_quantity"] * $values["food_price"]);
 ?>
 <tr>
 <td colspan="3" align="right">Tổng</td>
-<td align="right">&#8377; <?php echo number_format($total, 2); ?></td>
+<td align="right"> <?php echo number_format($total, 2); ?> VND</td>
 <td></td>
 </tr>
 </table>

@@ -146,19 +146,19 @@ else {
 
 <div class="paragraph1">
 
-    <p><h3>We are here to answer any queries you may have about our <font color="green"><strong>FoodExploria</strong></font> experiences. Reach out to us and we will respond as soon as we can.</h3></p>
-        <p><h3>Even if there is something you always wanted to experience and couldn't find it on <font color="green"><strong>FoodExploria</strong></font>, please do let us know and we here at <font color="green"><strong>FoodExploria promise to do our best to find it for you and suggest you the best of best.</strong></font> </h3></p>
-        <p><b><h3>Contact Details of Team FoodExploria are given below.</h3></b></p>
+    <p><h3>We are here to answer any queries you may have about our <font color="green"><strong>HUYFOOD</strong></font> experiences. Reach out to us and we will respond as soon as we can.</h3></p>
+        <p><h3>Even if there is something you always wanted to experience and couldn't find it on <font color="green"><strong>HUYFOOD</strong></font>, please do let us know and we here at <font color="green"><strong>HUYFOOD ?cart?promise to do our best to find it for you and suggest you the best of best.</strong></font> </h3></p>
+        <p><b><h3>Contact Details of Team HUYFOOD are given below.</h3></b></p>
         <p class="edit2">
         
-        <strong>Email      :</strong>  <a href="foodexploriahelp@gmail.com">foodexploriahelp@gmail.com</a>
+        <strong>Email      :</strong>  <a href="huyfood345@gmail.com">huyfood@gmail.com</a>
         |
         <strong>Telephone  :</strong>  8123044768
         
         </p>
         <p class="edit2"><strong>Get in touch with us on Social Media.</strong></p>
-        <pre><a href="https://www.facebook.com/FoodExploria/" target="_blank"><img src="images/facebook.jpg" width="50px" height="50px"></a>  <a href="https://twitter.com/login" target="_blank"><img src="images/googleplus.png" width="50px" height="50px"></a>  <a href="https://www.instagram.com/accounts/login/" target="_blank"><img src="images/twitter.jpg" width="50px" height="50px"></a>  <a href="https://www.facebook.com/FoodExploria/" target="_blank"><img src="images/insta.jpg" width="50px" height="50px"></a></pre>
-        <p class="edit2">We even provide you a platform to share your food experiences and reviews by mailing it to us at <a href="foodexploria@gmail.com">foodexploria@gmail.com</a> </p>
+        <pre><a href="https://www.facebook.com/HUYFOOD/" target="_blank"><img src="images/facebook.jpg" width="50px" height="50px"></a>  <a href="https://twitter.com/login" target="_blank"><img src="images/googleplus.png" width="50px" height="50px"></a>  <a href="https://www.instagram.com/accounts/login/" target="_blank"><img src="images/twitter.jpg" width="50px" height="50px"></a>  <a href="https://www.facebook.com/huyfood/" target="_blank"><img src="images/insta.jpg" width="50px" height="50px"></a></pre>
+        <p class="edit2">We even provide you a platform to share your food experiences and reviews by mailing it to us at <a href="huyfood345@gmail.com">huyfood345@gmail.com</a> </p>
       
 
 </div>
@@ -166,7 +166,7 @@ else {
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy All Rights Reserved </p>
+      <p>HUYFOOD 2025 | &copy All Rights Reserved</p>
   <br>
   </footer>
 </html>

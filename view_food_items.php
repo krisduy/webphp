@@ -33,18 +33,18 @@ if (!isset($login_session)) {
 
 <div class="container" style="margin-top:70px;">
   <div class="jumbotron">
-    <h1>Hello ADMIN!</h1>
-    <p>Danh sách sản phẩm hiện tại</p>
+    <h1>Xin Chào ADMIN!</h1>
+    <p>Quản lý món ăn ở đây !</p>
   </div>
 
   <div class="row">
     <div class="col-xs-3" style="text-align: center;">
       <div class="list-group">
-        <a href="view_food_items.php" class="list-group-item active">View Food Items</a>
-        <a href="add_food_items.php" class="list-group-item">Add Food Items</a>
-        <a href="edit_food_items.php" class="list-group-item">Edit Food Items</a>
-        <a href="delete_food_items.php" class="list-group-item">Delete Food Items</a>
-        <a href="view_order_details.php" class="list-group-item">View Order Details</a>
+        <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
+    		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
+    		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
+    		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
+        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
       </div>
     </div>
 

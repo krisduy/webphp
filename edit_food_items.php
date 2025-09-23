@@ -10,7 +10,7 @@ if(!isset($login_session)){
 <html>
 
 <head>
-    <title> Manager Login | Food Exploria </title>
+    <title> Manager Login | HUYFOOD </title>
     <link rel="stylesheet" type="text/css" href="css/edit_food_items.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -23,8 +23,7 @@ if(!isset($login_session)){
 </head>
 
 <body>
-
-<!-- Back to top button -->
+    <!-- Back to top button -->
 <button onclick="topFunction()" id="myBtn" title="Go to top">
     <span class="glyphicon glyphicon-chevron-up"></span>
 </button>
@@ -47,18 +46,18 @@ if(!isset($login_session)){
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">Food Exploria</a>
+            <a class="navbar-brand" href="index.php">HUYFOOD</a></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="aboutus.php">About</a></li>
-                <li><a href="contactus.php">Contact Us</a></li>
+                <li><a href="index.php">Trang Chủ</a></li>
+                <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+                <li><a href="contactus.php">Liên hệ </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?> </a></li>
-                <li class="active"> <a href="managerlogin.php">MANAGER CONTROL PANEL</a></li>
-                <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+                <li class="active"> <a href="managerlogin.php">Trang Admin</a></li>
+                <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
             </ul>
         </div>
     </div>
@@ -66,26 +65,26 @@ if(!isset($login_session)){
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Hello Manager! </h1>
-        <p>Manage all your restaurant from here</p>
+        <h1> Xin Chào Admin </h1>
+        <p>Đây Là Trang Chỉnh Sửa Sản Phẩm</p>
     </div>
 </div>
 
 <div class="container">
     <div class="col-xs-3" style="text-align: center;">
         <div class="list-group">
-            <a href="view_food_items.php" class="list-group-item">View Food Items</a>
-            <a href="add_food_items.php" class="list-group-item">Add Food Items</a>
-            <a href="edit_food_items.php" class="list-group-item active">Edit Food Items</a>
-            <a href="delete_food_items.php" class="list-group-item">Delete Food Items</a>
-            <a href="view_order_details.php" class="list-group-item">View Order Details</a>
+         <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
+    		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
+    		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
+    		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
+        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
         </div>
     </div>
 
     <div class="col-xs-3">
         <div class="form-area" style="padding: 10px 10px 110px 10px;">
             <div style="text-align: center;">
-                <h3>Click On Menu <br><br></h3>
+                <h3>Chọn Sản Phẩm Muốn Chỉnh <br><br></h3>
             </div>
             <?php
             require_once('connection.php');
@@ -129,7 +128,7 @@ if(!isset($login_session)){
             <div class="form-area" style="padding: 0px 100px 100px 100px;">
                 <form action="edit_food_items.php" method="POST" enctype="multipart/form-data">
                     <br style="clear: both">
-                    <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> EDIT YOUR FOOD ITEMS HERE </h3>
+                    <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Chỉnh Sửa Sản Phẩm ở Đây </h3>
 
                     <input type="hidden" name="dfid" value="<?php echo $row1['F_ID']; ?>" />
 
@@ -175,7 +174,7 @@ if(!isset($login_session)){
 
 <footer class="container-fluid bg-4 text-center">
     <br>
-    <p> Food Exploria 2017 | &copy; All Rights Reserved </p>
+    <p>HUYFOOD 2025 | &copy All Rights Reserved</p>
     <br>
 </footer>
 </body>

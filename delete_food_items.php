@@ -10,7 +10,7 @@ if(!isset($login_session)){
 <html>
 
 <head>
-    <title> Manager Login | Food Exploria </title>
+    <title> Manager Login | HUYFOOD </title>
     <link rel="stylesheet" type="text/css" href="css/delete_food_items.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -42,18 +42,18 @@ if(!isset($login_session)){
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">Food Exploria</a>
+      <a class="navbar-brand" href="index.php">HUYFOOD</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="aboutus.php">About</a></li>
-        <li><a href="contactus.php">Contact Us</a></li>
+        <li><a href="index.php">Trang Chủ </a></li>
+        <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+        <li><a href="contactus.php">Liên Hệ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?> </a></li>
-        <li class="active"> <a href="managerlogin.php">MANAGER CONTROL PANEL</a></li>
-        <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+        <li class="active"> <a href="managerlogin.php">Trang Admin</a></li>
+        <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất  </a></li>
       </ul>
     </div>
   </div>
@@ -61,19 +61,19 @@ if(!isset($login_session)){
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Hello Manager! </h1>
-        <p>Manage all your restaurant from here</p>
+        <h1>Xin Chào Admin! </h1>
+        <p>Quản lý Trang Xóa Sản Phẩm Ở Đây</p>
     </div>
 </div>
 
 <div class="container">
     <div class="col-xs-3" style="text-align: center;">
         <div class="list-group">
-            <a href="view_food_items.php" class="list-group-item">View Food Items</a>
-            <a href="add_food_items.php" class="list-group-item">Add Food Items</a>
-            <a href="edit_food_items.php" class="list-group-item">Edit Food Items</a>
-            <a href="delete_food_items.php" class="list-group-item active">Delete Food Items</a>
-            <a href="view_order_details.php" class="list-group-item">View Order Details</a>
+           <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
+    		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
+    		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
+    		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
+        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
         </div>
     </div>
 
@@ -81,7 +81,7 @@ if(!isset($login_session)){
       <div class="form-area" style="padding: 0px 100px 100px 100px;">
         <form action="delete_food_items1.php" method="POST">
         <br style="clear: both">
-        <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> DELETE YOUR FOOD ITEMS FROM HERE </h3>
+        <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Xóa sản phẩm ở đây </h3>
 
 <?php
 // Lấy tất cả món ăn từ bảng food
@@ -140,7 +140,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <footer class="container-fluid bg-4 text-center">
 <br>
-<p> Food Exploria 2017 | &copy All Rights Reserved </p>
+ <p>HUYFOOD 2025 | &copy All Rights Reserved</p>
 <br>
 </footer>
 </html>
