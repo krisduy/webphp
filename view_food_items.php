@@ -9,8 +9,7 @@ if (!isset($login_session)) {
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Admin Login | HUYFOOD</title>
+<head> Đăng Nhập Admin | HUYFOOD</title>
   <link rel="stylesheet" type="text/css" href="css/view_food_items.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -25,7 +24,7 @@ if (!isset($login_session)) {
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?></a></li>
-      <li class="active"><a href="managerlogin.php">TRANG ADMIN</a></li>
+      <li class="active"><a href="managerlogin.php">Trang Admin</a></li>
       <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất</a></li>
     </ul>
   </div>
@@ -34,7 +33,7 @@ if (!isset($login_session)) {
 <div class="container" style="margin-top:70px;">
   <div class="jumbotron">
     <h1>Xin Chào ADMIN!</h1>
-    <p>Quản lý món ăn ở đây !</p>
+    <p>Quản Lý Món Ăn Tại Đây !</p>
   </div>
 
   <div class="row">
@@ -49,7 +48,7 @@ if (!isset($login_session)) {
     </div>
 
     <div class="col-xs-9">
-      <h3 style="text-align:center;">DANH SÁCH MÓN ĂN</h3>
+      <h3 style="text-align:center;">Danh Sách Món Ăn</h3>
       <?php
       $sql = "SELECT * FROM food ORDER BY F_ID DESC";
       $result = mysqli_query($conn, $sql);
@@ -76,8 +75,8 @@ if (!isset($login_session)) {
               <td><?php echo $row["description"]; ?></td>
               <td><img src="<?php echo $row["images_path"]; ?>" width="80" height="60"></td>
               <td>
-                <a href="edit_food_items.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-warning btn-xs">Edit</a>
-                <a href="delete_food_items.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Bạn có chắc chắn muốn xóa món này?');">Delete</a>
+                <a href="edit_food_items.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-warning btn-xs">Chỉnh sửa</a>
+                <a href="delete_food_items.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Bạn có chắc chắn muốn xóa món này?');">Xóa</a>
                 <a href="view_order_details.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-info btn-xs">Xem Chi Tiết</a>
               </td>
             </tr>
@@ -94,7 +93,7 @@ if (!isset($login_session)) {
 </div>
 
 <footer class="container-fluid text-center" style="margin-top:20px;">
-  <p>HUYFOOD 2025 | &copy All Rights Reserved</p>
+  <p>HUYFOOD 2025 | &copy </p>
 </footer>
 
 </body>
