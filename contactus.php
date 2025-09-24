@@ -157,12 +157,11 @@ else {
         
         </p>
         <p class="edit2"><strong>Liên hệ với chúng tôi qua mạng xã hội :</strong></p>
-        <pre>
-  <img src="images/facebook.jpg" width="50px" height="50px">
-  <img src="images/googleplus.png" width="50px" height="50px">
-  <img src="images/twitter.jpg" width="50px" height="50px">
-  <img src="images/insta.jpg" width="50px" height="50px">
-</pre>
+        <img src="images/facebook.jpg" width="50px" height="50px">
+<img src="images/googleplus.png" width="50px" height="50px">
+<img src="images/twitter.jpg" width="50px" height="50px">
+<img src="images/insta.jpg" width="50px" height="50px">
+
 
         <p class="edit2">Chúng tôi thậm chí còn cung cấp cho bạn một nền tảng để chia sẻ những trải nghiệm ẩm thực và đánh giá của mình bằng cách gửi email cho chúng tôi tại địa chỉ <a href="huyfood345@gmail.com">huyfood123@gmail.com</a> </p>
       
