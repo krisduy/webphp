@@ -55,7 +55,7 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
 <div class="container">
     <div class="jumbotron">
      <h1>Xin Chào Admin! </h1>
-     <p>Quản Lí Cửa Hàng Tại Đây.</p>
+     <p>Quản Lí Cửa Hàng Tại Đây !</p>
 
     </div>
     </div>
@@ -85,7 +85,7 @@ header('Location: managerlogin.php'); // Redirecting To Home Page
       <div class="form-area" style="padding: 0px 100px 100px 100px;">
         <form action="add_food_items1.php" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Thêm Món Ăn Tại Đây </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Thêm Món Ăn Tại Đây !</h3>
 
           <div class="form-group">
             <input type="text" class="form-control" id="name" name="name" placeholder="Tên Món Ăn" required="">
