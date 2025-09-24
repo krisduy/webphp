@@ -5,7 +5,7 @@ session_start();
 <html>
 
   <head>
-    <title> Trang chủ | Food Exploria </title>
+    <title> Trang chủ | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/bootstrap.min.css">
@@ -103,12 +103,11 @@ else {
 
     <div class="wide">
       	<div class="col-xs-5 line"><hr></div>
-        <div class="col-xs-2 logo"><img src="images/logo.jpg"></div>
+        <div class="col-xs-2 logo"><img src="images/logothoi.jpg"></div>
         <div class="col-xs-5 line"><hr></div>
         <div class="tagline">Thưởng thức nhanh – Vui trọn vị!</div>
     </div>
     <br>
-    <!--<center><img src="images/orderimg.png" alt="image" height="50%"></center>-->
     <div class="orderblock">
     <h2>Bạn Đang Cảm Thấy Đói?</h2>
     <center><a class="btn btn-success btn-lg" href="customerlogin.php" role="button" > Đặt Hàng Ngay! </a></center>

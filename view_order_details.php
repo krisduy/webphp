@@ -58,8 +58,8 @@ if(mysqli_num_rows($result) > 0){
   <table class="table table-striped table-bordered">
     <thead class="thead-dark">
       <tr>
-        <th>Order ID</th>
-        <th>Food ID</th>
+        <th>ID Đặt Hàng</th>
+        <th>ID Sản Phẩm</th>
         <th>Tên Món</th>
         <th>Giá</th>
         <th>Mô Tả</th>

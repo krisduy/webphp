@@ -1,8 +1,8 @@
     <?php
-include('login_m.php'); // Includes Login Script
+include('login_m.php'); 
 
 if(isset($_SESSION['login_user1'])){
-header("location: view_food_items.php"); //Redirecting to myrestaurant Page
+header("location: view_food_items.php");
 }
 ?>
 
@@ -25,7 +25,7 @@ header("location: view_food_items.php"); //Redirecting to myrestaurant Page
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-            <span class="sr-only">thanh quản lí</span>
+            <span class="sr-only">Trang quản lí</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

@@ -133,32 +133,32 @@ if(!isset($login_session)){
                     <input type="hidden" name="dfid" value="<?php echo $row1['F_ID']; ?>" />
 
                     <div class="form-group">
-                        <label> Food Name: </label>
+                        <label> Tên Món Ăn: </label>
                         <input type="text" class="form-control" id="dname" name="dname" value="<?php echo htmlspecialchars($row1['name']); ?>" placeholder="Your Food name" required>
                     </div>
 
                     <div class="form-group">
-                        <label> Food Price: </label>
+                        <label> Giá : </label>
                         <input type="text" class="form-control" id="dprice" name="dprice" value="<?php echo $row1['price']; ?>" placeholder="Your Food Price (INR)" required>
                     </div>
 
                     <div class="form-group">
-                        <label> Food Description: </label>
+                        <label> Mô Tả: </label>
                         <input type="text" class="form-control" id="ddescription" name="ddescription" value="<?php echo htmlspecialchars($row1['description']); ?>" placeholder="Your Food Description" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Current Image:</label><br>
+                        <label>Ảnh hiện tại:</label><br>
                         <img src="<?php echo $row1['images_path']; ?>" width="100">
                     </div>
 
                     <div class="form-group">
-                        <label>Change Image:</label>
+                        <label>Thay đổi ảnh:</label>
                         <input type="file" name="dimage" accept="image/*">
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right" onclick="display_alert()"> Update </button>
+                        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right" onclick="display_alert()"> Cập Nhật </button>
                     </div>
                 </form>
             </div>

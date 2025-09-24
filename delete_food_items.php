@@ -97,12 +97,11 @@ if (mysqli_num_rows($result) > 0) {
   <thead class="thead-dark">
     <tr>
       <th>#</th>
-      <th>Food ID</th>
-      <th>Food Name</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Restaurant ID</th>
-      <th>Image</th>
+      <th>ID</th>
+      <th>Tên Món Ăn</th>
+      <th>Giá</th>
+      <th>Mô Tả</th>
+      <th>Ảnh</th>
     </tr>
   </thead>
 
@@ -124,7 +123,7 @@ if (mysqli_num_rows($result) > 0) {
 </table>
 <br>
 <div class="form-group">
-  <button type="submit" id="submit" name="delete" value="Delete" class="btn btn-danger pull-right"> DELETE</button>    
+  <button type="submit" id="submit" name="delete" value="Delete" class="btn btn-danger pull-right"> Xóa </button>    
 </div>
 
 <?php } else { ?>
