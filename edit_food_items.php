@@ -10,7 +10,7 @@ if(!isset($login_session)){
 <html>
 
 <head>
-    <title> Manager Login | HUYFOOD </title>
+    <title> Admin Đăng Nhập | HUYFOOD </title>
     <link rel="stylesheet" type="text/css" href="css/edit_food_items.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -23,25 +23,6 @@ if(!isset($login_session)){
 </head>
 
 <body>
-    <!-- Back to top button -->
-<button onclick="topFunction()" id="myBtn" title="Go to top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-</button>
-
-<script type="text/javascript">
-    window.onscroll = function() { scrollFunction() };
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("myBtn").style.display = "block";
-        } else {
-            document.getElementById("myBtn").style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
 
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
     <div class="container">
@@ -55,7 +36,7 @@ if(!isset($login_session)){
                 <li><a href="contactus.php">Liên hệ </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?> </a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?> </a></li>
                 <li class="active"> <a href="managerlogin.php">Trang Admin</a></li>
                 <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
             </ul>
@@ -65,8 +46,8 @@ if(!isset($login_session)){
 
 <div class="container">
     <div class="jumbotron">
-        <h1> Xin Chào Admin </h1>
-        <p>Đây Là Trang Chỉnh Sửa Sản Phẩm</p>
+        <h1> Xin Chào Admin !</h1>
+        <p>Quản Lý Cửa Hàng Tại Đây !</p>
     </div>
 </div>
 
@@ -84,7 +65,7 @@ if(!isset($login_session)){
     <div class="col-xs-3">
         <div class="form-area" style="padding: 10px 10px 110px 10px;">
             <div style="text-align: center;">
-                <h3>Chọn Sản Phẩm Muốn Chỉnh <br><br></h3>
+                <h3>Chọn Sản Phẩm Muốn Chỉnh Sửa.<br><br></h3>
             </div>
             <?php
             require_once('connection.php');
@@ -128,7 +109,7 @@ if(!isset($login_session)){
             <div class="form-area" style="padding: 0px 100px 100px 100px;">
                 <form action="edit_food_items.php" method="POST" enctype="multipart/form-data">
                     <br style="clear: both">
-                    <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Chỉnh Sửa Sản Phẩm ở Đây </h3>
+                    <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Chỉnh Sửa Sản Phẩm Ở Đây !</h3>
 
                     <input type="hidden" name="dfid" value="<?php echo $row1['F_ID']; ?>" />
 
@@ -174,7 +155,7 @@ if(!isset($login_session)){
 
 <footer class="container-fluid bg-4 text-center">
     <br>
-    <p>HUYFOOD 2025 | &copy All Rights Reserved</p>
+    <p>HUYFOOD 2025 | &copy </p>
     <br>
 </footer>
 </body>
