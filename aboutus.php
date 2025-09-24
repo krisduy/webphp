@@ -20,7 +20,7 @@ session_start();
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-            <span class="sr-only">NÚT MỞ/ĐÓNG </MENU></span>
+            <span class="sr-only">Toggle navigation</MENU></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -43,7 +43,7 @@ if(isset($_SESSION['login_user1'])){
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="view_food_items.php">thanh quản lí</a></li>
+            <li><a href="view_food_items.php">Trang Admin</a></li>
             <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
 <?php

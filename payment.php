@@ -37,7 +37,7 @@ if(!isset($_SESSION['login_user2'])){
       ?>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-          <li><a href="view_food_items.php">Trang Quản Lí</a></li>
+          <li><a href="view_food_items.php">Trang Admin</a></li>
           <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
         </ul>
       <?php
