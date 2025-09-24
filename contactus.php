@@ -135,7 +135,7 @@ else {
            <textarea class="form-control" type="textarea" id="message" placeholder="Mô Tả" maxlength="140" rows="7"></textarea>
            <span class="help-block"><p id="characterLeft" class="help-block">Tối đa : 140 từ </p></span>
           </div> 
-          <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Gửi/button>    
+          <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Gửi</button>    
         </form>
 
         
@@ -146,19 +146,25 @@ else {
 
 <div class="paragraph1">
 
-    <p><h3>We are here to answer any queries you may have about our <font color="green"><strong>HUYFOOD</strong></font> experiences. Reach out to us and we will respond as soon as we can.</h3></p>
-        <p><h3>Even if there is something you always wanted to experience and couldn't find it on <font color="green"><strong>HUYFOOD</strong></font>, please do let us know and we here at <font color="green"><strong>HUYFOOD ?cart?promise to do our best to find it for you and suggest you the best of best.</strong></font> </h3></p>
-        <p><b><h3>Contact Details of Team HUYFOOD are given below.</h3></b></p>
+    <p><h3>Chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc mà bạn có về những trải nghiệm cùng <font color="green"><strong>HUYFOOD</strong></font>. Hãy liên hệ với chúng tôi và bạn sẽ nhận được phản hồi trong thời gian sớm nhất.</h3></p>
+        <p><h3>Ngay cả khi có điều gì bạn luôn mong muốn được trải nghiệm nhưng chưa tìm thấy trên <font color="green"><strong>HUYFOOD</strong></font>, xin vui lòng cho chúng tôi biết.<font color="green"><strong>HUYFOOD cam kết sẽ nỗ lực hết sức để tìm ra cho bạn và gợi ý những điều tuyệt vời nhất.</strong></font> </h3></p>
+        <p><b><h3>Thông tin liên hệ của đội ngũ HUYFOOD được cung cấp bên dưới.</h3></b></p>
         <p class="edit2">
         
         <strong>Email:</strong>  <a href="huyfood345@gmail.com">huyfood@gmail.com</a>
         |
-        <strong> Số Điện Thoại  :</strong>  +84 876858550
+        <strong> Số Điện Thoại  :</strong>  +84 987654321
         
         </p>
-        <p class="edit2"><strong>Get in touch with us on Social Media.</strong></p>
-        <pre><a href="https://www.facebook.com/HUYFOOD/" target="_blank"><img src="images/facebook.jpg" width="50px" height="50px"></a>  <a href="https://twitter.com/login" target="_blank"><img src="images/googleplus.png" width="50px" height="50px"></a>  <a href="https://www.instagram.com/accounts/login/" target="_blank"><img src="images/twitter.jpg" width="50px" height="50px"></a>  <a href="https://www.facebook.com/huyfood/" target="_blank"><img src="images/insta.jpg" width="50px" height="50px"></a></pre>
-        <p class="edit2">We even provide you a platform to share your food experiences and reviews by mailing it to us at <a href="huyfood345@gmail.com">huyfood345@gmail.com</a> </p>
+        <p class="edit2"><strong>Liên hệ với chúng tôi qua mạng xã hội :</strong></p>
+        <pre>
+  <img src="images/facebook.jpg" width="50px" height="50px">
+  <img src="images/googleplus.png" width="50px" height="50px">
+  <img src="images/twitter.jpg" width="50px" height="50px">
+  <img src="images/insta.jpg" width="50px" height="50px">
+</pre>
+
+        <p class="edit2">Chúng tôi thậm chí còn cung cấp cho bạn một nền tảng để chia sẻ những trải nghiệm ẩm thực và đánh giá của mình bằng cách gửi email cho chúng tôi tại địa chỉ <a href="huyfood345@gmail.com">huyfood123@gmail.com</a> </p>
       
 
 </div>
@@ -166,7 +172,7 @@ else {
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-      <p>HUYFOOD 2025 | &copy All Rights Reserved</p>
+      <p>HUYFOOD 2025 | &copy </p>
   <br>
   </footer>
 </html>
