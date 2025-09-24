@@ -151,9 +151,9 @@ else {
         <p><b><h3>Contact Details of Team HUYFOOD are given below.</h3></b></p>
         <p class="edit2">
         
-        <strong>Email      :</strong>  <a href="huyfood345@gmail.com">huyfood@gmail.com</a>
+        <strong>Email:</strong>  <a href="huyfood345@gmail.com">huyfood@gmail.com</a>
         |
-        <strong>Telephone  :</strong>  8123044768
+        <strong> Số Điện Thoại  :</strong>  +84 876858550
         
         </p>
         <p class="edit2"><strong>Get in touch with us on Social Media.</strong></p>
