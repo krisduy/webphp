@@ -33,7 +33,7 @@ if (!isset($login_session)) {
 <div class="container" style="margin-top:70px;">
   <div class="jumbotron">
     <h1>Xin Chào ADMIN!</h1>
-    <p>Quản Lý Món Ăn Tại Đây !</p>
+    <p>Quản Lý Cửa Hàng Tại Đây !</p>
   </div>
 
   <div class="row">
