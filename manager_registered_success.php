@@ -16,7 +16,7 @@
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-            <span class="sr-only">thanh quản lí</span>
+            <span class="sr-only">Trang Admin</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -26,9 +26,9 @@
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active" ><a href="index.php">TRANG CHỦ</a></li>
-            <li><a href="aboutus.php">VỀ CHÚNG TÔI</a></li>
-            <li><a href="contactus.php">LIÊN HỆ</a></li>
+            <li class="active" ><a href="index.php">Trang Chủ</a></li>
+            <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -76,7 +76,7 @@ $conn->close();
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> Food Exploria 2017 | &copy  </p>
+  <p> HUYFOOD 2025 | &copy  </p>
   <br>
   </footer>
 </html>
