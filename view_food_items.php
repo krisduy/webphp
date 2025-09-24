@@ -23,7 +23,7 @@ if (!isset($login_session)) {
       <a class="navbar-brand" href="index.php">HUYFOOD</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?></a></li>
       <li class="active"><a href="managerlogin.php">Trang Admin</a></li>
       <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất</a></li>
     </ul>
@@ -32,7 +32,7 @@ if (!isset($login_session)) {
 
 <div class="container" style="margin-top:70px;">
   <div class="jumbotron">
-    <h1>Xin Chào ADMIN!</h1>
+    <h1>Xin Chào Admin!</h1>
     <p>Quản Lý Cửa Hàng Tại Đây !</p>
   </div>
 
