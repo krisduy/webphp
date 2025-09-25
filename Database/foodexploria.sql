@@ -40,9 +40,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
-('nidha', 'nidha', 'nidha@gmail.com', '998696572', 'Maharashtra', 'suhail'),
-('pratheek083', 'Pratheek Shiri', 'pratheek@gmail.com', '8779546521', 'Hyderabad', 'pratheek'),
-('rakshithk00', 'Rakshith Kotian', 'rakshith@gmail.com', '9547123658', 'Gujarath', 'rakshith');
+(),
+(),
+();
 
 -- --------------------------------------------------------
 
