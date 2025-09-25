@@ -11,7 +11,6 @@ header("location: customerlogin.php"); //Redirecting to myrestaurant Page
 
   <head>
     <title> Giỏ Hàng | HUYFOOD </title>
-    <title> Giỏ Hàng | HUYFOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/cart.css">
@@ -140,17 +139,17 @@ foreach($_SESSION["cart"] as $keys => $values)
 <tr>
 <td><?php echo $values["food_name"]; ?></td>
 <td><?php echo $values["food_quantity"] ?></td>
-<td><?php echo $values["food_price"]; ?> VND</td>
-<td><?php echo number_format($values["food_quantity"] * $values["food_price"], 2); ?></td>
+<td><?php echo number_format($values["food_price"],0). "VNĐ"; ?></td>
+<td><?php echo number_format($values["food_quantity"] * $values["food_price"],0)."VNĐ"; ?></td>
 <td><a href="cart.php?action=delete&id=<?php echo $values["food_id"]; ?>"><span class="text-danger">Xóa</span></a></td>
 </tr>
 <?php 
-$total = $total + ($values["food_quantity"] * $values["food_price"]);
+$total = $total + ($values["food_quantity"] * $values["food_price"]); 
 }
 ?>
 <tr>
 <td colspan="3" align="right">Tổng</td>
-<td align="right"> <?php echo number_format($total, 2); ?> VND</td>
+<td align="right"> <?php echo number_format($total, 0); ?> VNĐ</td>
 <td></td>
 </tr>
 </table>

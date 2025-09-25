@@ -83,7 +83,7 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
       </div>
     </div>
 
-    <h1 class="text-center">Tổng Giá Trị Đơn Hàng: <?php echo $gtotal; ?> VND</h1>
+    <h1 class="text-center">Tổng Giá Trị Đơn Hàng: <?php echo number_format($gtotal, 0, '.', '.'); ?> VNĐ</h1>
     <h5 class="text-center">Đã bao gồm tất cả phụ phí dịch vụ. (Không áp dụng phí giao hàng)</h5>
     <br>
     <div class="text-center">

@@ -1,7 +1,30 @@
 <?php
 session_start();
-?>
 
+// Kết nối Database
+$conn = mysqli_connect("localhost", "root", "", "foodexploria");
+if (!$conn) {
+    die("Kết nối thất bại: " . mysqli_connect_error());
+}
+
+// Nếu người dùng ấn nút gửi
+if (isset($_POST['submit'])) {
+    $name    = mysqli_real_escape_string($conn, $_POST['name']);
+    $email   = mysqli_real_escape_string($conn, $_POST['email']);
+    $mobile  = mysqli_real_escape_string($conn, $_POST['mobile']);
+    $subject = mysqli_real_escape_string($conn, $_POST['subject']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    $sql = "INSERT INTO contact_messages (name, email, mobile, subject, message) 
+            VALUES ('$name', '$email', '$mobile', '$subject', '$message')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm.');</script>";
+    } else {
+        echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+    }
+}
+?>
 <html>
 
   <head>
@@ -36,22 +59,17 @@ session_start();
           </ul>
 
           <?php
-
-
-if(isset($_SESSION['login_user1'])){
-
-?>
-
-
+          if(isset($_SESSION['login_user1'])){
+          ?>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào<?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user1']; ?> </a></li>
             <li><a href="view_food_items.php">Trang Admin</a></li>
             <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
-<?php
-}
-else if (isset($_SESSION['login_user2'])) {
-  ?>
+          <?php
+          }
+          else if (isset($_SESSION['login_user2'])) {
+          ?>
            <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
             <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
@@ -60,42 +78,36 @@ else if (isset($_SESSION['login_user2'])) {
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
               echo "$count"; 
-            }
+              }
               else
                 echo "0";
               ?>)
              </a></li>
             <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
           </ul>
-  <?php        
-}
-else {
-
-  ?>
-
-<ul class="nav navbar-nav navbar-right">
+          <?php        
+          }
+          else {
+          ?>
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Đăng Kí</a></li>
-              <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
-            
-            </ul>
+                  <li> <a href="customersignup.php"> User Đăng Kí</a></li>
+                  <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
+                </ul>
             </li>
 
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
-              <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
-              
-            </ul>
+                <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
+                <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
+              </ul>
             </li>
           </ul>
-
-<?php
-}
-?>
+          <?php
+          }
+          ?>
         </div>
-
       </div>
     </nav>
     <br>
@@ -111,7 +123,7 @@ else {
     <div class="container" >
     <div class="col-md-5" style="float: none; margin: 0 auto;">
       <div class="form-area">
-        <form role="form">
+        <form role="form" method="POST" action="contactus.php">
         <br style="clear: both">
           <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Form Liên Hệ</h3>
 
@@ -132,43 +144,34 @@ else {
           </div>
 
           <div class="form-group">
-           <textarea class="form-control" type="textarea" id="message" placeholder="Mô Tả" maxlength="140" rows="7"></textarea>
+           <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Mô Tả" maxlength="140" rows="7"></textarea>
            <span class="help-block"><p id="characterLeft" class="help-block">Tối đa : 140 từ </p></span>
           </div> 
-          <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Gửi</button>    
+          <button type="submit" name="submit" class="btn btn-primary pull-right">Gửi</button>    
         </form>
-
-        
       </div>
     </div>
-      
     </div>
 
 <div class="paragraph1">
-
     <p><h3>Chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc mà bạn có về những trải nghiệm cùng <font color="green"><strong>HUYFOOD</strong></font>. Hãy liên hệ với chúng tôi và bạn sẽ nhận được phản hồi trong thời gian sớm nhất.</h3></p>
-        <p><h3>Ngay cả khi có điều gì bạn luôn mong muốn được trải nghiệm nhưng chưa tìm thấy trên <font color="green"><strong>HUYFOOD</strong></font>, xin vui lòng cho chúng tôi biết.<font color="green"><strong>HUYFOOD cam kết sẽ nỗ lực hết sức để tìm ra cho bạn và gợi ý những điều tuyệt vời nhất.</strong></font> </h3></p>
-        <p><b><h3>Thông tin liên hệ của đội ngũ HUYFOOD được cung cấp bên dưới.</h3></b></p>
-        <p class="edit2">
-        
+    <p><h3>Ngay cả khi có điều gì bạn luôn mong muốn được trải nghiệm nhưng chưa tìm thấy trên <font color="green"><strong>HUYFOOD</strong></font>, xin vui lòng cho chúng tôi biết.<font color="green"><strong>HUYFOOD cam kết sẽ nỗ lực hết sức để tìm ra cho bạn và gợi ý những điều tuyệt vời nhất.</strong></font> </h3></p>
+    <p><b><h3>Thông tin liên hệ của đội ngũ HUYFOOD được cung cấp bên dưới.</h3></b></p>
+    <p class="edit2">
         <strong>Email:</strong>  <a href="huyfood345@gmail.com">huyfood@gmail.com</a>
         |
-        <strong> Số Điện Thoại  :</strong>  +84 987654321
-        
-        </p>
-        <p class="edit2"><strong>Liên hệ với chúng tôi qua mạng xã hội :</strong></p>
-        <img src="images/facebook.jpg" width="50px" height="50px">
-<img src="images/googleplus.png" width="50px" height="50px">
-<img src="images/twitter.jpg" width="50px" height="50px">
-<img src="images/insta.jpg" width="50px" height="50px">
+        <strong> Số Điện Thoại  :</strong>  +84 876858550
+    </p>
+    <p class="edit2"><strong>Liên hệ với chúng tôi qua mạng xã hội :</strong></p>
+    <img src="images/facebook.jpg" width="50px" height="50px">
+    <img src="images/googleplus.png" width="50px" height="50px">
+    <img src="images/twitter.jpg" width="50px" height="50px">
+    <img src="images/insta.jpg" width="50px" height="50px">
 
-
-        <p class="edit2">Chúng tôi thậm chí còn cung cấp cho bạn một nền tảng để chia sẻ những trải nghiệm ẩm thực và đánh giá của mình bằng cách gửi email cho chúng tôi tại địa chỉ <a href="huyfood345@gmail.com">huyfood123@gmail.com</a> </p>
-      
-
+    <p class="edit2">Chúng tôi thậm chí còn cung cấp cho bạn một nền tảng để chia sẻ những trải nghiệm ẩm thực và đánh giá của mình bằng cách gửi email cho chúng tôi tại địa chỉ <a href="huyfood345@gmail.com">huyfood123@gmail.com</a> </p>
 </div>
-     </body>
 
+  </body>
   <footer class="container-fluid bg-4 text-center">
   <br>
       <p>HUYFOOD 2025 | &copy </p>
