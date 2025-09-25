@@ -166,7 +166,7 @@ else {
   <div class="paragraph3">
     <div class="missionbox">
       <div class="missionfont">
-      <strong>HUYFOOD – Chất lượng trong từng món ăn.</strong>
+      <strong>HUYFOOD - Chất lượng trong từng món ăn.</strong>
       
     </div>
      
