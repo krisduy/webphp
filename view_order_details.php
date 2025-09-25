@@ -22,14 +22,21 @@ if(!isset($login_session)){
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">HUYFOOD</a>
-    </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.php">HUYFOOD</a></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="index.php">Trang Chủ</a></li>
+                <li><a href="aboutus.php">Về Chúng Tôi</a></li>
+                <li><a href="contactus.php">Liên hệ </a></li>
+            </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?></a></li>
       <li class="active"><a href="managerlogin.php">Trang Admin</a></li>
       <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất</a></li>
     </ul>
+    </div>
   </div>
 </nav>
 
