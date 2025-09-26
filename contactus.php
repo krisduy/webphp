@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
             VALUES ('$name', '$email', '$mobile', '$subject', '$message')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm.');</script>";
+        echo "<script>alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm.'); </script>";
     } else {
         echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
     }
