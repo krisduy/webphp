@@ -57,7 +57,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <div class="container">
         <div class="jumbotron">
             <h1>Xin Chào Admin!</h1>
-            <p>Quản Lí Cửa Hàng Tại Đây !</p>
+            <p>Trang Thêm Sản Phẩm Ở Đây !</p>
         </div>
     </div>
 

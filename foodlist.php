@@ -9,12 +9,61 @@ if(!isset($_SESSION['login_user2'])){
 <html>
 <head>
   <title> Danh Mục Món Ăn | HUYFOOD </title>
-</head>
+  <link rel="stylesheet" type="text/css" href="css/foodlist.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/foodlist.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <style>
+    /* ✅ Fix hover giỏ hàng không bị nền đen */
+    .navbar-inverse .navbar-nav > li > a {
+      color: #fff;
+    }
+    .navbar-inverse .navbar-nav > li > a:hover {
+      background-color: transparent !important;
+      color: #ddd !important;
+    }
+
+    /* ✅ Fix khung món ăn đều nhau */
+    .mypanel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 10px;
+      margin: 15px 0;
+      height: 420px; /* cố định chiều cao khung */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .mypanel img {
+      width: 100%;
+      height: 180px;   /* cố định chiều cao ảnh */
+      object-fit: cover; /* ảnh luôn nằm gọn trong khung */
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .mypanel h5 {
+      margin: 5px 0;
+      font-size: 14px;
+      text-align: center;
+    }
+    /* ✅ Input số lượng căn giữa */
+        .mypanel input[type="number"] {
+            width: 60px;
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+        }
+
+        .mypanel .btn-success {
+            margin-top: 10px;
+        }
+  </style>
+</head>
 
 <body>
 
@@ -61,9 +110,21 @@ else if (isset($_SESSION['login_user2'])) {
           else
             echo "0";
           ?>) </a></li>
+
+        <!-- 🔎 Thanh tìm kiếm -->
+        <li style="padding-top:8px;">
+          <form method="GET" action="foodlist.php" class="navbar-form" style="display:flex;  margin:0; padding:0; align-items: center; gap: 5px;">
+            <input type="text" name="search" id="search" 
+                   placeholder="Tìm món ăn..."
+                   value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" 
+                   autocomplete="off"
+                   class="form-control" style="width:150px;">
+            <button type="submit" class="btn btn-primary">Tìm</button>
+          </form>
+        </li>
         <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
       </ul>
-  <?php        
+  <?php    
 }
 else {
   ?>
@@ -124,27 +185,18 @@ else {
 
 <div class="container" style="width:95%;">
 
-<!-- 🔎 Thanh tìm kiếm có gợi ý -->
-<form method="GET" action="foodlist.php" 
-      style="margin-bottom: 20px; text-align:center; position:relative; z-index:2000;">
-  <input type="text" name="search" id="search" placeholder="Nhập tên món ăn..." 
-         value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" 
-         autocomplete="off"
-         style="padding: 8px; width: 250px;">
-  <button type="submit" class="btn btn-primary">Tìm kiếm</button>
-
-  <!-- 📌 Hộp gợi ý -->
-  <div id="suggestion-box" 
-       style="position:absolute; top:45px; left:50%; transform:translateX(-50%);
-              background:#fff; border:1px solid #ccc; width:250px; 
-              z-index:3000; display:none; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-  </div>
-</form>
-
 <script>
 // JS gợi ý tìm kiếm
 const searchInput = document.getElementById("search");
-const suggestionBox = document.getElementById("suggestion-box");
+const suggestionBox = document.createElement("div");
+suggestionBox.id = "suggestion-box";
+suggestionBox.style.position = "absolute";
+suggestionBox.style.background = "#fff";
+suggestionBox.style.border = "1px solid #ccc";
+suggestionBox.style.width = "150px";
+suggestionBox.style.display = "none";
+suggestionBox.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+searchInput.parentNode.appendChild(suggestionBox);
 
 searchInput.addEventListener("keyup", function() {
   const query = this.value.toLowerCase().trim();
@@ -155,7 +207,7 @@ searchInput.addEventListener("keyup", function() {
     return;
   }
 
-  // Gợi ý cứng (bạn có thể thay bằng AJAX lấy từ DB FOOD)
+  // Gợi ý cứng (có thể thay bằng AJAX lấy từ DB FOOD)
   const suggestions = [
     "Phở Ngon Hà Thành",
     "Cơm Tấm Sườn",

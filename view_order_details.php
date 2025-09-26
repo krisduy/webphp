@@ -42,8 +42,8 @@ if(!isset($login_session)){
 
 <div class="container" style="margin-top:70px;">
   <div class="jumbotron">
-    <h1>Chi Tiết Đơn Hàng</h1>
-    <p>Hiển Thị Tất Cả Đơn Hàng !</p>
+    <h1>Xin Chào Admin</h1>
+    <p>Hiển Thị Chi Tiết Tất Cả Đơn Hàng !</p>
   </div>
 
 

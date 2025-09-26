@@ -5,15 +5,11 @@ if(!isset($login_session)){
     header('Location: managerlogin.php'); // Redirecting To Home Page
     exit();
 }
-
-// Lấy dữ liệu từ POST và escape để tránh lỗi
 $name = $conn->real_escape_string($_POST['name']);
 $price = $conn->real_escape_string($_POST['price']);
 $description = $conn->real_escape_string($_POST['description']);
 $images_path = $conn->real_escape_string($_POST['images_path']);
 
-// Trước đây lấy R_ID từ bảng RESTAURANTS, giờ bỏ hoàn toàn
-// Có thể gán mặc định R_ID = 1 hoặc bỏ R_ID nếu không cần
 $R_ID = 1;
 
 $query = "INSERT INTO FOOD(name, price, description, R_ID, images_path) 
@@ -80,7 +76,6 @@ if (!$success){
 
     <?php
 } else {
-    // Thành công
     header('Location: add_food_items.php');
     exit();
 }
