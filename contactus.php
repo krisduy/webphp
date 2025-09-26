@@ -2,7 +2,7 @@
 session_start();
 
 // Kết nối Database
-$conn = mysqli_connect("localhost", "root", "", "foodexploria");
+$conn = mysqli_connect("localhost", "root", "", "huyfood");
 if (!$conn) {
     die("Kết nối thất bại: " . mysqli_connect_error());
 }

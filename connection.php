@@ -5,7 +5,7 @@ if (!function_exists('Connect')) {
         $dbhost = "localhost";
         $dbuser = "root";
         $dbpass = "";
-        $dbname = "foodexploria";
+        $dbname = "huyfood";
 
         $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
