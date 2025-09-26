@@ -66,7 +66,7 @@ $conn->close();
 
 <div class="container">
 	<div class="jumbotron" style="text-align: center;">
-		<h2> <?php echo "Welcome $fullname!" ?> </h2>
+		<h2> <?php echo "Xin Chào $fullname!" ?> </h2>
 		<h1>Đăng Kí Thành Công.</h1>
 		<p>Đăng Nhập Tại <a href="customerlogin.php">Đây!</a></p>
 	</div>

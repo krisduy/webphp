@@ -46,7 +46,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>
                         Xin Chào <?php echo $login_session; ?> </a></li>
-                    <li class="active"><a href="managerlogin.php">Trang Quản Lí</a></li>
+                    <li class="active"><a href="managerlogin.php">Trang Admin</a></li>
                     <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
                 </ul>
             </div>

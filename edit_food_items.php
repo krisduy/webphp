@@ -17,7 +17,7 @@ if(!isset($login_session)){
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
         function display_alert() {
-            alert("Data Updated Successfully...!!!");
+            alert("Cập Nhật Thành Công...!!!");
         }
     </script>
 </head>
@@ -33,7 +33,7 @@ if(!isset($login_session)){
             <ul class="nav navbar-nav">
                 <li><a href="index.php">Trang Chủ</a></li>
                 <li><a href="aboutus.php">Về Chúng Tôi</a></li>
-                <li><a href="contactus.php">Liên hệ </a></li>
+                <li><a href="contactus.php">Liên Hệ </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?> </a></li>

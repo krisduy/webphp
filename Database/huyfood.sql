@@ -1,4 +1,5 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
@@ -9,6 +10,17 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
+=======
+-- version 4.5.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 24, 2017 at 05:23 PM
+-- Server version: 5.7.11
+-- PHP Version: 5.6.19
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 SET time_zone = "+00:00";
 
 
@@ -18,12 +30,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+<<<<<<< HEAD
 -- Cơ sở dữ liệu: `foodexploria`
+=======
+-- Database: `foodexploria`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `contact_messages`
 --
 
@@ -51,6 +68,9 @@ INSERT INTO `contact_messages` (`id`, `name`, `email`, `mobile`, `subject`, `mes
 
 --
 -- Cấu trúc bảng cho bảng `customer`
+=======
+-- Table structure for table `customer`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 
 CREATE TABLE `customer` (
@@ -60,6 +80,7 @@ CREATE TABLE `customer` (
   `contact` varchar(30) NOT NULL,
   `address` varchar(50) NOT NULL,
   `password` varchar(30) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -69,11 +90,27 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
 ('Ducbaby', 'Nguyễn Văn A', 'nguyenvanduclt2310@gmail.com', '0876858550', 'hanoi', '123456'),
 ('Đức', 'Nguyễn Trung Đức', 'nguyentrungduclt2310@gmail.com', '0876858550', 'số 8 ngõ 282 lạc long quân', '123456');
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
+(),
+(),
+();
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `food`
+=======
+-- Table structure for table `food`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 
 CREATE TABLE `food` (
@@ -83,6 +120,7 @@ CREATE TABLE `food` (
   `description` varchar(200) NOT NULL,
   `R_ID` int(30) NOT NULL,
   `images_path` varchar(200) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -97,11 +135,29 @@ INSERT INTO `food` (`F_ID`, `name`, `price`, `description`, `R_ID`, `images_path
 (73, 'Chả Giò Ngon', 45000, 'Vỏ bánh vàng giòn rụm, nhân thịt và rau củ đậm đà, chiên nóng hổi thơm ngon khó cưỡng.', 1, 'images/chagio.jpeg'),
 (74, 'Tobokki Hàn Quốc', 85000, 'Bánh gạo mềm dẻo truyền thống Hàn Quốc, hòa quyện cùng sốt gochujang cay ngọt đậm đà, thêm chả cá và trứng cho hương vị hấp dẫn khó quên.', 1, 'images/tobboki.jpeg'),
 (75, ' Cánh Gà Rang Chua Ngọt', 45000, 'Cánh gà chiên mắm – Món ăn đậm đà hương vị Việt, thơm nức mũi với lớp da gà vàng giòn rụm quyện cùng nước mắm tỏi ớt sệt sánh. Thịt gà bên trong mềm ngọt, bên ngoài giòn tan, thấm đều gia vị mặn ngọt ', 1, 'images/gaxaochuangọt cánh.jpeg');
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `food`
+--
+INSERT INTO `food` (`F_ID`, `name`, `price`, `description`, `R_ID`, `images_path`) VALUES
+(58, 'Juicy Masala Paneer Kathi Roll', 40000, 'Juicy Masala Paneer Kathi Roll loaded with Masala Paneer chunks, onion & Mayo.', 1, 'images/images/Masala_Paneer_Kathi_Roll.jpg'),
+(59, 'Meurig Fish', 70000, 'Try Meurig - A whole Pomfret fish grilled with tangy marination & served with grilled onions and tomatoes.', 2, 'images/images/Meurig.jpg'),
+(60, 'Chocolate Hazelnut Truffle', 99000, 'Lose all senses over this very delicious Chocolate hazelnut truffle.', 3, 'images/Chocolate_Hazelnut_Truffle.jpg'),
+(61, 'Happy Happy Choco Chip Shake', 80000, 'Happy Happy Choco Chip Shake - a perfect party sweet treat.', 1, 'images/Happy_Happy_Choco_Chip_Shake.jpg'),
+(62, 'Spring Rolls', 65000, 'Delicious Spring Rolls by Dragon Hut, Delhi. Order now!!!', 2, 'images/Spring_Rolls.jpg'),
+(63, 'Baahubali Thali', 75000, 'Baahubali Thali is accompanied by Kattapa Biriyani, Devasena Paratha, Bhalladeva Patiala Lassi.', 3, 'images/Baahubali_Thali.jpg');
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `manager`
+=======
+-- Table structure for table `manager`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 
 CREATE TABLE `manager` (
@@ -111,6 +167,7 @@ CREATE TABLE `manager` (
   `contact` varchar(30) NOT NULL,
   `address` varchar(50) NOT NULL,
   `password` varchar(30) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -119,11 +176,27 @@ CREATE TABLE `manager` (
 
 INSERT INTO `manager` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
 ('Ducbaby', 'Nguyen Van C', 'NguyenvanC123@gmail.com', '0876858550', 'số 8 ngõ 282 lạc long quân', '123456');
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
+('aditi068', 'Aditi Naik', 'aditi@gmail.com', '8654751259', 'Goa', 'aditi'),
+('aminnikhil073', 'Nikhil Amin', 'aminnikhil073@gmail.com', '9632587412', 'Karnataka', 'nikhil'),
+('roshanraj07', 'Roshan Raj', 'roshan@gmail.com', '9541258761', 'Bihar', 'roshan');
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `orders`
+=======
+-- Table structure for table `orders`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 
 CREATE TABLE `orders` (
@@ -135,6 +208,7 @@ CREATE TABLE `orders` (
   `order_date` date NOT NULL,
   `username` varchar(30) NOT NULL,
   `R_ID` int(30) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -210,25 +284,47 @@ ALTER TABLE `contact_messages`
 
 --
 -- Chỉ mục cho bảng `customer`
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- Indexes for dumped tables
+--
+--
+-- Indexes for table `customer`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`username`);
 
 --
+<<<<<<< HEAD
 -- Chỉ mục cho bảng `food`
+=======
+-- Indexes for table `food`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 ALTER TABLE `food`
   ADD PRIMARY KEY (`F_ID`,`R_ID`),
   ADD KEY `R_ID` (`R_ID`);
 
 --
+<<<<<<< HEAD
 -- Chỉ mục cho bảng `manager`
+=======
+-- Indexes for table `manager`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 ALTER TABLE `manager`
   ADD PRIMARY KEY (`username`);
 
 --
+<<<<<<< HEAD
 -- Chỉ mục cho bảng `orders`
+=======
+-- Indexes for table `orders`
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_ID`),
@@ -237,6 +333,7 @@ ALTER TABLE `orders`
   ADD KEY `R_ID` (`R_ID`);
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -258,6 +355,38 @@ ALTER TABLE `food`
 ALTER TABLE `orders`
   MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 COMMIT;
+=======
+-- AUTO_INCREMENT for dumped tables
+--
+-- AUTO_INCREMENT for table `food`
+--
+ALTER TABLE `food`
+  MODIFY `F_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT;
+--
+--
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `food`
+--
+ALTER TABLE `food`
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`F_ID`) REFERENCES `food` (`F_ID`),
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`username`) REFERENCES `customer` (`username`),
+
+--
+>>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
