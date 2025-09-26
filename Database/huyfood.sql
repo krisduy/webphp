@@ -141,14 +141,6 @@ INSERT INTO `food` (`F_ID`, `name`, `price`, `description`, `R_ID`, `images_path
 --
 -- Dumping data for table `food`
 --
-INSERT INTO `food` (`F_ID`, `name`, `price`, `description`, `R_ID`, `images_path`) VALUES
-(58, 'Juicy Masala Paneer Kathi Roll', 40000, 'Juicy Masala Paneer Kathi Roll loaded with Masala Paneer chunks, onion & Mayo.', 1, 'images/images/Masala_Paneer_Kathi_Roll.jpg'),
-(59, 'Meurig Fish', 70000, 'Try Meurig - A whole Pomfret fish grilled with tangy marination & served with grilled onions and tomatoes.', 2, 'images/images/Meurig.jpg'),
-(60, 'Chocolate Hazelnut Truffle', 99000, 'Lose all senses over this very delicious Chocolate hazelnut truffle.', 3, 'images/Chocolate_Hazelnut_Truffle.jpg'),
-(61, 'Happy Happy Choco Chip Shake', 80000, 'Happy Happy Choco Chip Shake - a perfect party sweet treat.', 1, 'images/Happy_Happy_Choco_Chip_Shake.jpg'),
-(62, 'Spring Rolls', 65000, 'Delicious Spring Rolls by Dragon Hut, Delhi. Order now!!!', 2, 'images/Spring_Rolls.jpg'),
-(63, 'Baahubali Thali', 75000, 'Baahubali Thali is accompanied by Kattapa Biriyani, Devasena Paratha, Bhalladeva Patiala Lassi.', 3, 'images/Baahubali_Thali.jpg');
->>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 
 -- --------------------------------------------------------
 
@@ -179,15 +171,7 @@ INSERT INTO `manager` (`username`, `fullname`, `email`, `contact`, `address`, `p
 =======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `manager`
---
 
-INSERT INTO `manager` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
-('aditi068', 'Aditi Naik', 'aditi@gmail.com', '8654751259', 'Goa', 'aditi'),
-('aminnikhil073', 'Nikhil Amin', 'aminnikhil073@gmail.com', '9632587412', 'Karnataka', 'nikhil'),
-('roshanraj07', 'Roshan Raj', 'roshan@gmail.com', '9541258761', 'Bihar', 'roshan');
->>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 
 -- --------------------------------------------------------
 
