@@ -46,11 +46,11 @@ if (!isset($login_session)) {
   <div class="row">
     <div class="col-xs-3" style="text-align: center;">
       <div class="list-group">
-        <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
-    		<a href="add_food_items.php" class="list-group-item active">Thêm Món Ăn</a>
-    		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
-    		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
-        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
+        <a href="view_food_items.php" class="list-group-item active">Xem Các Món Ăn</a>
+    		<a href="add_food_items.php" class="list-group-item">Thêm Món Ăn</a>
+    		<a href="edit_food_items.php" class="list-group-item">Chỉnh Sửa Món Ăn</a>
+    		<a href="delete_food_items.php" class="list-group-item">Xóa Món Ăn</a>
+        <a href="view_order_details.php" class="list-group-item">Xem Chi Tiết Đơn Hàng</a>
       </div>
     </div>
 

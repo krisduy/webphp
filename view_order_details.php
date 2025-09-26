@@ -45,9 +45,19 @@ if(!isset($login_session)){
     <h1>Xin Chào Admin</h1>
     <p>Hiển Thị Chi Tiết Tất Cả Đơn Hàng !</p>
   </div>
+    <div class="row">
+    <div class="col-xs-3" style="text-align: center;">
+      <div class="list-group">
+        <a href="view_food_items.php" class="list-group-item">Xem Các Món Ăn</a>
+    		<a href="add_food_items.php" class="list-group-item">Thêm Món Ăn</a>
+    		<a href="edit_food_items.php" class="list-group-item">Chỉnh Sửa Món Ăn</a>
+    		<a href="delete_food_items.php" class="list-group-item">Xóa Món Ăn</a>
+        <a href="view_order_details.php" class="list-group-item active">Xem Chi Tiết Đơn Hàng</a>
+      </div>
+    </div>
 
 
-  <div class="col-xs-12">
+  <div class="col-xs-9">
     <div class="form-area" style="padding: 0px 50px 50px 50px;">
       <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> DANH SÁCH ĐƠN HÀNG </h3>
 
