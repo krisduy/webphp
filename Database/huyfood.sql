@@ -10,7 +10,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-=======
+======
 -- version 4.5.5.1
 -- http://www.phpmyadmin.net
 --
@@ -30,17 +30,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-<<<<<<< HEAD
--- Cơ sở dữ liệu: `foodexploria`
+  <<--HEAD
+-- Cơ sở dữ liệu: `huyfood`
 =======
--- Database: `foodexploria`
+-- Database: `huyfood`
 >>>>>>> 0bb60a9bd793381fac881df3106f6d7cf8631a4c
 --
 
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
+<<<<<- HEAD
 -- Cấu trúc bảng cho bảng `contact_messages`
 --
 
@@ -80,7 +80,7 @@ CREATE TABLE `customer` (
   `contact` varchar(30) NOT NULL,
   `address` varchar(50) NOT NULL,
   `password` varchar(30) NOT NULL
-<<<<<<< HEAD
+<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -91,7 +91,7 @@ INSERT INTO `customer` (`username`, `fullname`, `email`, `contact`, `address`, `
 ('Ducbaby', 'Nguyễn Văn A', 'nguyenvanduclt2310@gmail.com', '0876858550', 'hanoi', '123456'),
 ('Đức', 'Nguyễn Trung Đức', 'nguyentrungduclt2310@gmail.com', '0876858550', 'số 8 ngõ 282 lạc long quân', '123456');
 =======
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `customer`
@@ -106,7 +106,7 @@ INSERT INTO `customer` (`username`, `fullname`, `email`, `contact`, `address`, `
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
+<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `food`
 =======
 -- Table structure for table `food`
@@ -120,7 +120,7 @@ CREATE TABLE `food` (
   `description` varchar(200) NOT NULL,
   `R_ID` int(30) NOT NULL,
   `images_path` varchar(200) NOT NULL
-<<<<<<< HEAD
+<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -153,7 +153,7 @@ INSERT INTO `food` (`F_ID`, `name`, `price`, `description`, `R_ID`, `images_path
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
+<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `manager`
 =======
 -- Table structure for table `manager`
@@ -167,7 +167,7 @@ CREATE TABLE `manager` (
   `contact` varchar(30) NOT NULL,
   `address` varchar(50) NOT NULL,
   `password` varchar(30) NOT NULL
-<<<<<<< HEAD
+<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -192,7 +192,7 @@ INSERT INTO `manager` (`username`, `fullname`, `email`, `contact`, `address`, `p
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
+<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `orders`
 =======
 -- Table structure for table `orders`
@@ -208,7 +208,7 @@ CREATE TABLE `orders` (
   `order_date` date NOT NULL,
   `username` varchar(30) NOT NULL,
   `R_ID` int(30) NOT NULL
-<<<<<<< HEAD
+<<<<<<HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -299,7 +299,7 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`username`);
 
 --
-<<<<<<< HEAD
+<<<<<<HEAD
 -- Chỉ mục cho bảng `food`
 =======
 -- Indexes for table `food`
@@ -310,7 +310,7 @@ ALTER TABLE `food`
   ADD KEY `R_ID` (`R_ID`);
 
 --
-<<<<<<< HEAD
+<<<<<< HEAD
 -- Chỉ mục cho bảng `manager`
 =======
 -- Indexes for table `manager`
@@ -320,7 +320,7 @@ ALTER TABLE `manager`
   ADD PRIMARY KEY (`username`);
 
 --
-<<<<<<< HEAD
+<<<<<< HEAD
 -- Chỉ mục cho bảng `orders`
 =======
 -- Indexes for table `orders`
@@ -333,7 +333,7 @@ ALTER TABLE `orders`
   ADD KEY `R_ID` (`R_ID`);
 
 --
-<<<<<<< HEAD
+<<<<<<HEAD
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
