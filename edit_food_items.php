@@ -17,7 +17,7 @@ if(!isset($login_session)){
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
         function display_alert() {
-            alert("Data Updated Successfully...!!!");
+            alert("Cập Nhật Thành Công...!!!");
         }
     </script>
 </head>
