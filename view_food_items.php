@@ -4,7 +4,7 @@ require_once('connection.php'); // đảm bảo chỉ include 1 lần
 $conn = Connect();
 
 if (!isset($login_session)) {
-    header('Location: managerlogin.php'); // Redirecting To Home Page
+    header('Location: managerlogin.php'); 
 }
 ?>
 <!DOCTYPE html>

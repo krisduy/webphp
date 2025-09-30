@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['login_user2'])){
-  header("location: customerlogin.php"); //Redirecting to myrestaurant Page
+  header("location: customerlogin.php"); 
 }
 ?>
 
@@ -15,7 +15,6 @@ if(!isset($_SESSION['login_user2'])){
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <style>
-    /* ✅ Fix hover giỏ hàng không bị nền đen */
     .navbar-inverse .navbar-nav > li > a {
       color: #fff;
     }
@@ -24,7 +23,6 @@ if(!isset($_SESSION['login_user2'])){
       color: #ddd !important;
     }
 
-    /* ✅ Fix khung món ăn đều nhau */
     .mypanel {
       background: #fff;
       border-radius: 8px;
@@ -51,7 +49,6 @@ if(!isset($_SESSION['login_user2'])){
       font-size: 14px;
       text-align: center;
     }
-    /* ✅ Input số lượng căn giữa */
         .mypanel input[type="number"] {
             width: 60px;
             margin: 0 auto;
@@ -111,7 +108,7 @@ else if (isset($_SESSION['login_user2'])) {
             echo "0";
           ?>) </a></li>
 
-        <!-- 🔎 Thanh tìm kiếm -->
+        <!--  Thanh tìm kiếm -->
         <li style="padding-top:8px;">
           <form method="GET" action="foodlist.php" class="navbar-form" style="display:flex;  margin:0; padding:0; align-items: center; gap: 5px;">
             <input type="text" name="search" id="search" 
@@ -196,6 +193,9 @@ suggestionBox.style.border = "1px solid #ccc";
 suggestionBox.style.width = "150px";
 suggestionBox.style.display = "none";
 suggestionBox.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+suggestionBox.style.marginTop = "5px";   // chỉnh khoảng cách
+suggestionBox.style.zIndex = "9999";     // luôn nổi trên
+
 searchInput.parentNode.appendChild(suggestionBox);
 
 searchInput.addEventListener("keyup", function() {
