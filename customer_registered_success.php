@@ -52,7 +52,7 @@ $contact = $conn->real_escape_string($_POST['contact']);
 $address = $conn->real_escape_string($_POST['address']);
 $password = $conn->real_escape_string($_POST['password']);
 
-$query = "INSERT into CUSTOMER(fullname,username,email,contact,address,password) VALUES('" . $fullname . "','" . $username . "','" . $email . "','" . $contact . "','" . $address ."','" . $password ."')";
+$query = "INSERT into CUSTOMER(username,email,password) VALUES('" . $username . "','" . $email . "','" . $password ."')";
 $success = $conn->query($query);
 
 if (!$success){

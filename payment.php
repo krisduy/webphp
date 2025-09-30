@@ -2,15 +2,24 @@
 session_start();
 require 'connection.php';
 $conn = Connect();
+
+// Kiểm tra user đã login chưa
 if(!isset($_SESSION['login_user2'])){
     header("location: customerlogin.php");
     exit();
 }
+
+// Lấy customer_id từ session
+if(!isset($_SESSION['login_user2_id'])){
+    die("Lỗi: Customer ID chưa được thiết lập. Vui lòng đăng nhập lại.");
+}
+$customer_id = $_SESSION['login_user2_id'];
+
 ?>
 
 <html>
 <head>
-    <title> Thanh Toán | HUYFOOD</title>
+    <title>Thanh Toán | HUYFOOD</title>
 </head>
 
 <link rel="stylesheet" type="text/css" href="css/payment.css">
@@ -32,70 +41,82 @@ if(!isset($_SESSION['login_user2'])){
         <li><a href="contactus.php">Liên Hệ</a></li>
       </ul>
 
-      <?php
-      if(isset($_SESSION['login_user1'])){
-      ?>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-          <li><a href="view_food_items.php">Trang Admin</a></li>
-          <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
-        </ul>
-      <?php
-      } else if(isset($_SESSION['login_user2'])){
-      ?>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
-          <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
-          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng
-             (<?php echo isset($_SESSION["cart"]) ? count($_SESSION["cart"]) : 0; ?>)
-          </a></li>
-          <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
-        </ul>
-      <?php } ?>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
+        <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
+        <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng
+           (<?php echo isset($_SESSION["cart"]) ? count($_SESSION["cart"]) : 0; ?>)
+        </a></li>
+        <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
+      </ul>
     </div>
   </div>
 </nav>
 
 <?php
 $gtotal = 0;
+
+// Kiểm tra giỏ hàng có dữ liệu
 if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["cart"]) > 0){
+
     foreach($_SESSION["cart"] as $keys => $values){
-        $F_ID = $values["food_id"];
-        $foodname = $values["food_name"];
-        $quantity = $values["food_quantity"];
-        $price = $values["food_price"];
-        $total = ($quantity * $price);
-        $R_ID = $values["R_ID"];
-        $username = $_SESSION["login_user2"];
+        // Kiểm tra tồn tại dữ liệu từng món
+        $food_id = isset($values["food_id"]) ? $values["food_id"] : 0;
+        $quantity = isset($values["food_quantity"]) ? $values["food_quantity"] : 1;
+        $price = isset($values["food_price"]) ? $values["food_price"] : 0;
+        $manager_id = isset($values["manager_id"]) ? $values["manager_id"] : NULL; // NULL nếu không có
         $order_date = date('Y-m-d');
 
-        $gtotal += $total;
+        $gtotal += ($quantity * $price);
 
-        // Thêm đơn hàng vào bảng ORDERS
-        $query = "INSERT INTO orders (F_ID, foodname, price, quantity, order_date, username, R_ID) 
-                  VALUES ('$F_ID','$foodname','$price','$quantity','$order_date','$username','$R_ID')";
-        $conn->query($query);
+        // Chèn đơn hàng vào bảng orders
+        $stmt = $conn->prepare("
+            INSERT INTO orders (customer_id, food_id, manager_id, quantity, price, order_date)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ");
+
+        if(!$stmt){
+            die("Lỗi chuẩn bị câu lệnh: " . $conn->error);
+        }
+
+        // Nếu manager_id NULL thì truyền NULL cho MySQL
+        if($manager_id === NULL){
+            $stmt->bind_param("iiiids", $customer_id, $food_id, $manager_id, $quantity, $price, $order_date);
+        } else {
+            $stmt->bind_param("iiiids", $customer_id, $food_id, $manager_id, $quantity, $price, $order_date);
+        }
+
+        if(!$stmt->execute()){
+            die("Lỗi thêm đơn hàng: " . $stmt->error);
+        }
+
+        $stmt->close();
     }
 ?>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Chọn Phương Thức Thanh Toán</h1>
-      </div>
-    </div>
 
-    <h1 class="text-center">Tổng Giá Trị Đơn Hàng: <?php echo number_format($gtotal, 0, '.', '.'); ?> VNĐ</h1>
-    <h5 class="text-center">Đã bao gồm tất cả phụ phí dịch vụ. (Không áp dụng phí giao hàng)</h5>
-    <br>
-    <div class="text-center">
-      <a href="cart.php" class="btn btn-warning">
-        <span class="glyphicon glyphicon-circle-arrow-left"></span> Quay Lại Giỏ Hàng
-      </a>
-      <a href="COD.php" class="btn btn-success">
-        <span class="glyphicon glyphicon-"></span> Thanh Toán Khi Nhận Hàng
-      </a>
-    </div>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Chọn Phương Thức Thanh Toán</h1>
+  </div>
+</div>
 
-<?php } else { ?>
+<h1 class="text-center">Tổng Giá Trị Đơn Hàng: <?php echo number_format($gtotal, 0, '.', '.'); ?> VNĐ</h1>
+<h5 class="text-center">Đã bao gồm tất cả phụ phí dịch vụ. (Không áp dụng phí giao hàng)</h5>
+<br>
+<div class="text-center">
+  <a href="cart.php" class="btn btn-warning">
+    <span class="glyphicon glyphicon-circle-arrow-left"></span> Quay Lại Giỏ Hàng
+  </a>
+  <a href="COD.php" class="btn btn-success">
+    <span class="glyphicon glyphicon-"></span> Thanh Toán Khi Nhận Hàng
+  </a>
+</div>
+
+<?php
+    // Xóa giỏ hàng sau khi thêm đơn
+    unset($_SESSION["cart"]);
+} else { 
+?>
     <div class="container">
       <div class="jumbotron">
         <h1>Giỏ hàng trống!</h1>
@@ -114,3 +135,4 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
 
 </body>
 </html>
+

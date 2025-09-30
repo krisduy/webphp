@@ -1,38 +1,38 @@
 <?php
-session_start(); 
-$error=''; 
+session_start();
+$error = '';
 
 if (isset($_POST['submit'])) {
-if (empty($_POST['username']) || empty($_POST['password'])) {
-$error = "Username hoặc Email không tồn tại.";
-}
-else
-{
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        $error = "Username hoặc mật khẩu không được để trống.";
+    } else {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-$username=$_POST['username'];
-$password=$_POST['password'];
+        require 'connection.php';
+        $conn = Connect();
 
-require 'connection.php';
-$conn = Connect();
+        $query = "SELECT customer_id, username, password FROM customers WHERE username=? AND password=? LIMIT 1";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $stmt->bind_result($customer_id, $db_username, $db_password);
 
+        if ($stmt->fetch()) {
+            // ✅ Đây là chỗ quan trọng: lưu session
+            $_SESSION['login_user2'] = $db_username;
+            $_SESSION['login_user2_id'] = $customer_id; // <-- chèn vào đây
 
-$query = "SELECT username, password FROM CUSTOMER WHERE username=? AND password=? LIMIT 1";
+            header("location: foodlist.php");
+            exit();
+        } else {
+            $error = "Tên đăng nhập hoặc mật khẩu sai.";
+        }
 
-
-$stmt = $conn->prepare($query);
-$stmt -> bind_param("ss", $username, $password);
-$stmt -> execute();
-$stmt -> bind_result($username, $password);
-$stmt -> store_result();
-
-if ($stmt->fetch())  
-{
-	$_SESSION['login_user2']=$username; 
-	header("location: foodlist.php"); 
-} else {
-$error = "";
-}
-mysqli_close($conn); 
-}
+        $stmt->close();
+        $conn->close();
+    }
 }
 ?>
+
+

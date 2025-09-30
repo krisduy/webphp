@@ -9,13 +9,17 @@ if (!$conn) {
 
 // Nếu người dùng ấn nút gửi
 if (isset($_POST['submit'])) {
+
     $name    = mysqli_real_escape_string($conn, $_POST['name']);
     $email   = mysqli_real_escape_string($conn, $_POST['email']);
     $mobile  = mysqli_real_escape_string($conn, $_POST['mobile']);
     $subject = mysqli_real_escape_string($conn, $_POST['subject']);
     $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-    $sql = "INSERT INTO contact_messages (name, email, mobile, subject, message) 
+    // Nếu user đăng nhập là customer thì lấy customer_id
+    $customer_id = isset($_SESSION['login_user2']) ? $_SESSION['login_user2'] : NULL;
+
+    $sql = "INSERT INTO contact_messages ( name, email, mobile, subject, message) 
             VALUES ('$name', '$email', '$mobile', '$subject', '$message')";
 
     if (mysqli_query($conn, $sql)) {
@@ -24,6 +28,7 @@ if (isset($_POST['submit'])) {
         echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
+
 ?>
 <html>
 
@@ -167,7 +172,7 @@ if (isset($_POST['submit'])) {
     <img src="images/facebook.jpg" width="50px" height="50px">
     <img src="images/gg.png" width="50px" height="50px">
     <img src="images/twiterrrrr.jpeg" width="50px" height="50px">
-    <img src="images/insta.jpg" width="50px" height="50px">
+    <img src="images/inta.jpeg" width="50px" height="50px">
 
     <p class="edit2">Chúng tôi thậm chí còn cung cấp cho bạn một nền tảng để chia sẻ những trải nghiệm ẩm thực và đánh giá của mình bằng cách gửi email cho chúng tôi tại địa chỉ <a href="huyfood345@gmail.com">huyfood123@gmail.com</a> </p>
 </div>

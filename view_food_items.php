@@ -57,7 +57,7 @@ if (!isset($login_session)) {
     <div class="col-xs-9">
       <h3 style="text-align:center;">Danh Sách Món Ăn</h3>
       <?php
-      $sql = "SELECT * FROM food ORDER BY F_ID DESC";
+      $sql = "SELECT * FROM food ORDER BY food_id DESC";
       $result = mysqli_query($conn, $sql);
 
       if(mysqli_num_rows($result) > 0) {
@@ -76,15 +76,15 @@ if (!isset($login_session)) {
           <tbody>
             <?php while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-              <td><?php echo $row["F_ID"]; ?></td>
+              <td><?php echo $row["food_id"]; ?></td>
               <td><?php echo $row["name"]; ?></td>
               <td><?php echo number_format($row["price"],0,',','.'); ?> VNĐ</td>
               <td><?php echo $row["description"]; ?></td>
               <td><img src="<?php echo $row["images_path"]; ?>" width="80" height="60"></td>
               <td>
-                <a href="edit_food_items.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-warning btn-xs">Chỉnh sửa</a>
-                <a href="delete_food_items.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Bạn có chắc chắn muốn xóa món này?');">Xóa</a>
-                <a href="view_order_details.php?F_ID=<?php echo $row['F_ID']; ?>" class="btn btn-info btn-xs">Xem Chi Tiết</a>
+                <a href="edit_food_items.php?F_ID=<?php echo $row['food_id']; ?>" class="btn btn-warning btn-xs">Chỉnh sửa</a>
+                <a href="delete_food_items.php?F_ID=<?php echo $row['food_id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Bạn có chắc chắn muốn xóa món này?');">Xóa</a>
+                <a href="view_order_details.php?F_ID=<?php echo $row['food_id']; ?>" class="btn btn-info btn-xs">Xem Chi Tiết</a>
               </td>
             </tr>
             <?php } ?>

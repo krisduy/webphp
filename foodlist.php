@@ -241,9 +241,9 @@ $conn = Connect();
 $search = "";
 if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
     $search = mysqli_real_escape_string($conn, $_GET['search']);
-    $sql = "SELECT * FROM FOOD WHERE name LIKE '%$search%' ORDER BY F_ID";
+    $sql = "SELECT * FROM FOOD WHERE name LIKE '%$search%' ORDER BY food_id";
 } else {
-    $sql = "SELECT * FROM FOOD ORDER BY F_ID";
+    $sql = "SELECT * FROM food ORDER BY food_id ";
 }
 
 $result = mysqli_query($conn, $sql);
@@ -253,7 +253,7 @@ if (mysqli_num_rows($result) > 0)
   while($row = mysqli_fetch_assoc($result)){
 ?>
 <div class="col-md-4">
-  <form method="post" action="cart.php?action=add&id=<?php echo $row["F_ID"]; ?>">
+  <form method="post" action="cart.php?action=add&id=<?php echo $row["food_id"]; ?>">
     <div class="mypanel" align="center">
       <img src="<?php echo $row["images_path"]; ?>" class="img-responsive">
       <h5 class="text-info"><?php echo $row["name"]; ?></h5>
@@ -264,7 +264,7 @@ if (mysqli_num_rows($result) > 0)
       </h5>
       <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
       <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
-      <input type="hidden" name="hidden_RID" value="<?php echo $row["R_ID"]; ?>">
+      <input type="hidden" name="hidden_RID" value="<?php echo $row["manager_id"]; ?>">
       <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Thêm Vào Giỏ Hàng">
     </div>
   </form>

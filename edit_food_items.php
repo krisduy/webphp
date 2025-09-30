@@ -27,7 +27,7 @@ if(!isset($login_session)){
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">HUYFOOD</a></a>
+            <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -54,11 +54,11 @@ if(!isset($login_session)){
 <div class="container">
     <div class="col-xs-3" style="text-align: center;">
         <div class="list-group">
-         <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
-    		<a href="add_food_items.php" class="list-group-item ">Thêm Món Ăn</a>
-    		<a href="edit_food_items.php" class="list-group-item active ">Chỉnh Sửa Món Ăn</a>
-    		<a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
-        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
+            <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
+            <a href="add_food_items.php" class="list-group-item ">Thêm Món Ăn</a>
+            <a href="edit_food_items.php" class="list-group-item active ">Chỉnh Sửa Món Ăn</a>
+            <a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
+            <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
         </div>
     </div>
 
@@ -71,8 +71,9 @@ if(!isset($login_session)){
             require_once('connection.php');
             $conn = Connect();
 
-            if (isset($_POST['submit'])) {
-                $F_ID = $_POST['dfid'];
+            // Xử lý form cập nhật món ăn
+            if (isset($_POST['submit']) && isset($_POST['dfid'])) {
+                $food_id = $_POST['dfid'];
                 $name = $_POST['dname'];
                 $price = $_POST['dprice'];
                 $description = $_POST['ddescription'];
@@ -82,24 +83,25 @@ if(!isset($login_session)){
                     $target_dir = "images/";
                     $target_file = $target_dir . basename($_FILES["dimage"]["name"]);
                     move_uploaded_file($_FILES["dimage"]["tmp_name"], $target_file);
-                    $query = mysqli_query($conn, "UPDATE food SET name='$name', price='$price', description='$description', images_path='$target_file' WHERE F_ID='$F_ID'");
+                    $query_update = mysqli_query($conn, "UPDATE food SET name='$name', price='$price', description='$description', images_path='$target_file' WHERE food_id='$food_id'");
                 } else {
-                    $query = mysqli_query($conn, "UPDATE food SET name='$name', price='$price', description='$description' WHERE F_ID='$F_ID'");
+                    $query_update = mysqli_query($conn, "UPDATE food SET name='$name', price='$price', description='$description' WHERE food_id='$food_id'");
                 }
             }
 
             // Lấy danh sách tất cả món ăn
-            $query = mysqli_query($conn, "SELECT * FROM food ORDER BY F_ID");
+            $query = mysqli_query($conn, "SELECT * FROM food ORDER BY food_id");
             while ($row = mysqli_fetch_array($query)) {
-                echo "<div class='list-group' style='text-align:center;'><b><a href='edit_food_items.php?update={$row['F_ID']}'>{$row['name']}</a></b></div>";
+                echo "<div class='list-group' style='text-align:center;'><b><a href='edit_food_items.php?update={$row['food_id']}'>{$row['name']}</a></b></div>";
             }
             ?>
 
             <?php
+            // Hiển thị form chỉnh sửa nếu có chọn món
             if (isset($_GET['update'])) {
-                $update = $_GET['update'];
-                $query1 = mysqli_query($conn, "SELECT * FROM food WHERE F_ID=$update");
-                while ($row1 = mysqli_fetch_array($query1)) {
+                $update_id = $_GET['update'];
+                $query1 = mysqli_query($conn, "SELECT * FROM food WHERE food_id=$update_id");
+                if ($row1 = mysqli_fetch_array($query1)) {
             ?>
         </div>
     </div>
@@ -111,7 +113,7 @@ if(!isset($login_session)){
                     <br style="clear: both">
                     <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Chỉnh Sửa Sản Phẩm Ở Đây !</h3>
 
-                    <input type="hidden" name="dfid" value="<?php echo $row1['F_ID']; ?>" />
+                    <input type="hidden" name="dfid" value="<?php echo $row1['food_id']; ?>" />
 
                     <div class="form-group">
                         <label> Tên Món Ăn: </label>
@@ -160,4 +162,5 @@ if(!isset($login_session)){
 </footer>
 </body>
 </html>
+
 

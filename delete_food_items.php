@@ -5,7 +5,32 @@ if(!isset($login_session)){
     header('Location: managerlogin.php'); // Redirecting To Home Page
     exit();
 }
+
+require_once('connection.php');
+$conn = Connect();
+
+// --- Xử lý xóa checkbox ---
+if (isset($_POST['delete'])) {
+    if (isset($_POST['checkbox']) && is_array($_POST['checkbox']) && !empty($_POST['checkbox'])) {
+        // ép kiểu int từng phần tử để an toàn
+        $checkbox = array_map('intval', $_POST['checkbox']); 
+        $ids = implode(',', $checkbox);
+
+        $sql = "DELETE FROM food WHERE food_id IN ($ids)";
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>alert('Xóa thành công!'); window.location.href='delete_food_items.php';</script>";
+            exit();
+        } else {
+            echo "<script>alert('Xóa thất bại: ".mysqli_error($conn)."'); window.location.href='delete_food_items.php';</script>";
+            exit();
+        }
+    } else {
+        echo "<script>alert('Bạn chưa chọn món ăn nào để xóa!'); window.location.href='delete_food_items.php';</script>";
+        exit();
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +43,6 @@ if(!isset($login_session)){
 </head>
 
 <body>
-
 
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
   <div class="container">
@@ -51,24 +75,22 @@ if(!isset($login_session)){
     <div class="col-xs-3" style="text-align: center;">
         <div class="list-group">
            <a href="view_food_items.php" class="list-group-item ">Xem Các Món Ăn</a>
-    		<a href="add_food_items.php" class="list-group-item ">Thêm Món Ăn</a>
-    		<a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
-    		<a href="delete_food_items.php" class="list-group-item active ">Xóa Món Ăn</a>
-        <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
+           <a href="add_food_items.php" class="list-group-item ">Thêm Món Ăn</a>
+           <a href="edit_food_items.php" class="list-group-item ">Chỉnh Sửa Món Ăn</a>
+           <a href="delete_food_items.php" class="list-group-item active ">Xóa Món Ăn</a>
+           <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
         </div>
     </div>
 
     <div class="col-xs-9">
       <div class="form-area" style="padding: 0px 100px 100px 100px;">
-        <form action="delete_food_items1.php" method="POST">
+        <form action="delete_food_items.php" method="POST">
         <br style="clear: both">
         <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Xóa Sản Phẩm Ở Đây.</h3>
 
 <?php
 // Lấy tất cả món ăn từ bảng food
-require_once('connection.php');
-$conn = Connect();
-$sql = "SELECT * FROM food ORDER BY F_ID";
+$sql = "SELECT * FROM food ORDER By food_id ";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -91,12 +113,11 @@ if (mysqli_num_rows($result) > 0) {
 ?>
   <tbody>
     <tr>
-      <td> <input name="checkbox[]" type="checkbox" value="<?php echo $row['F_ID']; ?>"/> </td>
-      <td><?php echo $row["F_ID"]; ?></td>
+      <td> <input name="checkbox[]" type="checkbox" value="<?php echo $row['food_id']; ?>"/> </td>
+      <td><?php echo $row["food_id"]; ?></td>
       <td><?php echo $row["name"]; ?></td>
       <td><?php echo $row["price"]; ?></td>
       <td><?php echo $row["description"]; ?></td>
-      <td><?php echo $row["R_ID"]; ?></td>
       <td><img src="<?php echo $row["images_path"]; ?>" width="80" height="60"></td>
     </tr>
   </tbody>

@@ -1,32 +1,52 @@
 <?php
-include('session_m.php');
+// Kết nối database
+require_once 'connection.php';
+$conn = Connect();
 
-if(!isset($login_session)){
-    header('Location: managerlogin.php'); // Redirecting To Home Page
+// Start session nếu chưa active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Kiểm tra manager đã login chưa
+if (!isset($_SESSION['login_user1'])) {
+    header("Location: managerlogin.php");
     exit();
 }
+
+// Lấy username manager từ session
+$user_check = $_SESSION['login_user1']; // username đã login
+
+// Lấy manager_id từ database
+$result = $conn->query("SELECT manager_id FROM manager WHERE username='$user_check'");
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $manager_id = $row['manager_id']; // dùng để insert food
+} else {
+    die("Manager không tồn tại trong database.");
+}
+
+// Lấy dữ liệu từ form POST và bảo vệ dữ liệu
 $name = $conn->real_escape_string($_POST['name']);
 $price = $conn->real_escape_string($_POST['price']);
 $description = $conn->real_escape_string($_POST['description']);
 $images_path = $conn->real_escape_string($_POST['images_path']);
 
-$R_ID = 1;
-
-$query = "INSERT INTO FOOD(name, price, description, R_ID, images_path) 
-          VALUES('$name', '$price', '$description', '$R_ID', '$images_path')";
+// Query insert món ăn vào bảng food
+$query = "INSERT INTO food(name, price, description, images_path, manager_id) 
+          VALUES('$name', '$price', '$description', '$images_path', '$manager_id')";
 $success = $conn->query($query);
 
+// Xử lý kết quả
 if (!$success){
     ?>
 
     <!DOCTYPE html>
     <html>
     <head>
-        <title></title>
+        <title>Thêm Món Ăn Thất Bại</title>
         <link rel="stylesheet" type="text/css" href="css/add_food_items.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </head>
     <body>
 
@@ -50,7 +70,7 @@ if (!$success){
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?> </a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $user_check; ?> </a></li>
                 <li class="active"> <a href="managerlogin.php">Trang Admin</a></li>
                 <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất </a></li>
               </ul>
@@ -59,26 +79,31 @@ if (!$success){
         </nav>
 
         <div class="container">
-            <div class="jumbotron">
-             <h1> Ôi!!! </h1>
-             <p>Không thể thêm món ăn . Vui lòng Kiểm Tra Lại Thông Tin Bạn Đã Nhập.</p>
-             <p><a href="add_food_items.php"> Nhấn Vào Đây Để Thêm </a></p>
+            <div class="jumbotron text-center">
+             <h1>Ôi!!!</h1>
+             <p>Không thể thêm món ăn. Vui lòng kiểm tra lại thông tin bạn đã nhập.</p>
+             <p><a href="add_food_items.php">Nhấn vào đây để thử lại</a></p>
             </div>
         </div>
 
     </body>
     <footer class="container-fluid bg-4 text-center">
       <br>
-    <p>HUYFOOD 2025 | &copy </p>
+      <p>HUYFOOD 2025 | &copy;</p>
       <br>
     </footer>
     </html>
 
-    <?php
+<?php
 } else {
-    header('Location: add_food_items.php');
+    // Thêm thành công → hiển thị thông báo popup
+    echo "<script>
+            alert('Thêm món ăn thành công!');
+            window.location.href='add_food_items.php';
+          </script>";
     exit();
 }
 
+// Đóng kết nối
 $conn->close();
 ?>

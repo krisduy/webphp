@@ -63,11 +63,20 @@ if(!isset($login_session)){
 
 <?php
 // JOIN với bảng food để lấy ảnh và mô tả
-$sql = "SELECT o.order_ID, o.F_ID, o.foodname, o.price, o.quantity, o.username, o.order_date,
-        f.description, f.images_path
+$sql = "SELECT o.order_id, 
+               o.food_id,       -- thêm cột food_id để không báo undefined
+               f.name AS foodname, 
+               o.price, 
+               o.quantity, 
+               c.username AS customer_name,  -- đặt alias rõ ràng
+               o.order_date,
+               f.description, 
+               f.images_path
         FROM orders o
-        LEFT JOIN food f ON o.F_ID = f.F_ID
+        LEFT JOIN food f ON o.food_id = f.food_id
+        LEFT JOIN customers c ON o.customer_id = c.customer_id
         ORDER BY o.order_date DESC";
+
 
 $result = mysqli_query($conn, $sql);
 
@@ -90,8 +99,8 @@ if(mysqli_num_rows($result) > 0){
     <tbody>
     <?php while($row = mysqli_fetch_assoc($result)){ ?>
       <tr>
-        <td><?php echo $row["order_ID"]; ?></td>
-        <td><?php echo $row["F_ID"]; ?></td>
+        <td><?php echo $row["order_id"]; ?></td>
+        <td><?php echo $row["food_id"]; ?></td>
         <td><?php echo $row["foodname"]; ?></td>
         <td><?php echo number_format($row["price"],0,',','.'); ?> VNĐ</td>
         <td><?php echo !empty($row["description"]) ? $row["description"] : '-'; ?></td>
@@ -103,7 +112,7 @@ if(mysqli_num_rows($result) > 0){
           <?php endif; ?>
         </td>
         <td><?php echo $row["quantity"]; ?></td>
-        <td><?php echo $row["username"]; ?></td>
+        <td><?php echo $row["customer_name"]; ?></td>
         <td><?php echo $row["order_date"]; ?></td>
       </tr>
     <?php } ?>
