@@ -63,7 +63,7 @@ if ($check_result->num_rows > 0) {
 }
 
 // Dòng 56 đã sửa:
-$query = "INSERT INTO CUSTOMER(username, email, password) VALUES('$username', '$email', '$hashed_password')";
+$query = "INSERT INTO CUSTOMER (username, email, password,address,Telephone,fullname) VALUES('$username', '$email', '$hashed_password','$address','$contact','$fullname')";
 $success = $conn->query($query);
 
 if (!$success){

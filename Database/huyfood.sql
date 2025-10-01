@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS customer (
     password VARCHAR(255) NOT NULL,
     fullname VARCHAR(50),
     email VARCHAR(100),
-    mobile VARCHAR(15),
+    Telephone VARCHAR(15),
     address VARCHAR(200)
 );
 
