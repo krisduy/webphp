@@ -35,9 +35,6 @@ if (isset($_POST['submit'])) {
         echo "Lỗi: " . mysqli_error($conn);
     }
 }
-
-?>
-
 ?>
 <html>
 
