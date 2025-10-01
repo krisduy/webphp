@@ -74,7 +74,7 @@ $sql = "SELECT o.order_id,
                f.images_path
         FROM orders o
         LEFT JOIN food f ON o.food_id = f.food_id
-        LEFT JOIN customers c ON o.customer_id = c.customer_id
+        LEFT JOIN customer c ON o.customer_id = c.customer_id
         ORDER BY o.order_date DESC";
 
 

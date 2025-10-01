@@ -7,6 +7,13 @@ if (!$conn) {
     die("Kết nối thất bại: " . mysqli_connect_error());
 }
 
+// --- Thêm các cột cần thiết nếu chưa tồn tại ---
+$alter_sql = "ALTER TABLE contact_messages 
+    ADD COLUMN IF NOT EXISTS name VARCHAR(100) AFTER customer_id,
+    ADD COLUMN IF NOT EXISTS email VARCHAR(100) AFTER name,
+    ADD COLUMN IF NOT EXISTS mobile VARCHAR(20) AFTER email";
+mysqli_query($conn, $alter_sql);
+
 // Nếu người dùng ấn nút gửi
 if (isset($_POST['submit'])) {
 
@@ -17,17 +24,19 @@ if (isset($_POST['submit'])) {
     $message = mysqli_real_escape_string($conn, $_POST['message']);
 
     // Nếu user đăng nhập là customer thì lấy customer_id
-    $customer_id = isset($_SESSION['login_user2']) ? $_SESSION['login_user2'] : NULL;
+    $customer_id = isset($_SESSION['login_user2_id']) ? $_SESSION['login_user2_id'] : NULL;
 
-    $sql = "INSERT INTO contact_messages ( name, email, mobile, subject, message) 
-            VALUES ('$name', '$email', '$mobile', '$subject', '$message')";
+    $sql = "INSERT INTO contact_messages (customer_id, name, email, mobile, subject, message) 
+            VALUES ('$customer_id', '$name', '$email', '$mobile', '$subject', '$message')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm.'); </script>";
     } else {
-        echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Lỗi: " . mysqli_error($conn);
     }
 }
+
+?>
 
 ?>
 <html>

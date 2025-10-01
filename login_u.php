@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
         } else {
             // Nếu user chưa tồn tại, có thể đăng ký luôn và lưu mật khẩu hash
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            $insert = "INSERT INTO customers (username, password) VALUES (?, ?)";
+            $insert = "INSERT INTO customer (username, password) VALUES (?, ?)";
             $stmt_insert = $conn->prepare($insert);
             $stmt_insert->bind_param("ss", $username, $hashed_password);
             if ($stmt_insert->execute()) {
