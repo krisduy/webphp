@@ -11,7 +11,6 @@
 
   <body>
 
-
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -53,10 +52,15 @@ $address = $conn->real_escape_string($_POST['address']);
 $password = $conn->real_escape_string($_POST['password']);
 
 $query = "INSERT into MANAGER(fullname,username,email,contact,address,password) VALUES('" . $fullname . "','" . $username . "','" . $email . "','" . $contact . "','" . $address ."','" . $password ."')";
-$success = $conn->query($query);
 
-if (!$success){
-	die("Couldnt enter data: ".$conn->error);
+try {
+    $success = $conn->query($query);
+} catch (mysqli_sql_exception $e) {
+    if (strpos($e->getMessage(), "Duplicate entry") !== false) {
+        die("Lỗi: Username '$username' đã tồn tại. Vui lòng chọn tên khác.");
+    } else {
+        die("Lỗi cơ sở dữ liệu: " . $e->getMessage());
+    }
 }
 
 $conn->close();
@@ -72,7 +76,7 @@ $conn->close();
 	</div>
 </div>
 
-    </body>
+  </body>
 
   <footer class="container-fluid bg-4 text-center">
   <br>

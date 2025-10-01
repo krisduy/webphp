@@ -1,8 +1,8 @@
 
-CREATE TABLE manager (
+CREATE TABLE IF NOT EXISTS manager (
     manager_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(30) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     fullname VARCHAR(50),
     email VARCHAR(50),
     contact VARCHAR(20),
@@ -10,15 +10,16 @@ CREATE TABLE manager (
 );
 
 -- Bảng khách hàng (chỉ 1 bảng)
-CREATE TABLE customer (
+CREATE TABLE IF NOT EXISTS customer (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     fullname VARCHAR(50),
     email VARCHAR(100),
-    mobile VARCHAR(20),
+    mobile VARCHAR(15),
     address VARCHAR(200)
 );
+
 
 -- Bảng món ăn
 CREATE TABLE food (
@@ -64,3 +65,4 @@ CREATE TABLE contact_messages (
         REFERENCES customer(customer_id)
         ON DELETE SET NULL ON UPDATE CASCADE
 );
+

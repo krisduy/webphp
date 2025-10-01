@@ -11,7 +11,6 @@
 
   <body>
 
-
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -52,7 +51,19 @@ $contact = $conn->real_escape_string($_POST['contact']);
 $address = $conn->real_escape_string($_POST['address']);
 $password = $conn->real_escape_string($_POST['password']);
 
-$query = "INSERT into CUSTOMER(username,email,password) VALUES('" . $username . "','" . $email . "','" . $password ."')";
+// Hash mật khẩu
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+// Kiểm tra username tồn tại chưa
+$check_query = "SELECT username FROM CUSTOMER WHERE username='$username'";
+$check_result = $conn->query($check_query);
+
+if ($check_result->num_rows > 0) {
+    die("Lỗi: Username '$username' đã tồn tại. Vui lòng chọn username khác.");
+}
+
+// Dòng 56 đã sửa:
+$query = "INSERT INTO CUSTOMER(username, email, password) VALUES('$username', '$email', '$hashed_password')";
 $success = $conn->query($query);
 
 if (!$success){
@@ -72,11 +83,11 @@ $conn->close();
 	</div>
 </div>
 
-    </body>
+  </body>
 
   <footer class="container-fluid bg-4 text-center">
   <br>
-  <p> HUYFOOD 2025 | &copy  </p>
+  <p> HUYFOOD 2025 | &copy; </p>
   <br>
   </footer>
 </html>

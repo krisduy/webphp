@@ -86,7 +86,7 @@
           <div class="form-group col-xs-12">
             <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
             <div class="input-group">
-              <input class="form-control" id="username" type="text" name="username" placeholder="Nhập Username" required="">
+              <input class="form-control" id="username" type="text" name="username" placeholder="Nhập Tên" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
             </span>
@@ -110,7 +110,7 @@
 
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Số điện thoại: </label>
+            <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Telephone: </label>
             <div class="input-group">
               <input class="form-control" id="contact" type="text" name="contact" placeholder="Nhập số diện thoại" required="">
               <span class="input-group-btn">
@@ -123,9 +123,9 @@
 
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="address"><span class="text-danger" style="margin-right: 5px;">*</span> Địa Chỉ: </label>
+            <label for="address"><span class="text-danger" style="margin-right: 5px;">*</span> Adrress: </label>
             <div class="input-group">
-              <input class="form-control" id="address" type="text" name="address" placeholder="Địa Chỉ" required="">
+              <input class="form-control" id="address" type="text" name="address" placeholder=" Nhập Địa Chỉ" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></label>
             </span>
@@ -138,7 +138,7 @@
           <div class="form-group col-xs-12">
             <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Password: </label>
             <div class="input-group">
-              <input class="form-control" id="password" type="password" name="password" placeholder="Nhập Password" required="">
+              <input class="form-control" id="password" type="password" name="password" placeholder="Nhập Mật Khẩu" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
             </span>
