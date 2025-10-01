@@ -37,7 +37,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <html>
-
   <head>
     <title> Liên Hệ | HUYFOOD </title>
   </head>
