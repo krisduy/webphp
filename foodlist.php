@@ -97,7 +97,7 @@ if(isset($_SESSION['login_user1'])){
 else if (isset($_SESSION['login_user2'])) {
   ?>
        <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
+<li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
         <li class="active"><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
         <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng  (<?php
           if(isset($_SESSION["cart"])){
@@ -168,7 +168,7 @@ else {
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
@@ -259,8 +259,8 @@ if (mysqli_num_rows($result) > 0)
       <h5 class="text-info"><?php echo $row["name"]; ?></h5>
       <h5 class="text-info"><?php echo $row["description"]; ?></h5>
       <h5 class="text-danger"><?php echo number_format($row["price"], 0, ',', '.'); ?> VNĐ</h5>
-      <h5 class="text-info">Số lượng: 
-        <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> 
+      <h5 class="text-info">Số lượng:
+<input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> 
       </h5>
       <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
       <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
