@@ -53,7 +53,11 @@ if (isset($_POST['submit'])) {
                 $error = "Tên đăng nhập hoặc mật khẩu sai.";
             }
         } else {
-            // Nếu user chưa tồn tại, tự tạo mới (chỉ username + password)
+            // Nếu user chưa tồn tại -> báo lỗi, KHÔNG tự động tạo tài khoản
+            $error = "Tài khoản chưa tồn tại. Vui lòng đăng ký trước khi đăng nhập.";
+
+            /*
+            // === CODE AUTO ĐĂNG KÝ (ĐÃ COMMENT ĐỂ TRÁNH TỰ ĐỘNG TẠO USER) ===
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $insert = "INSERT INTO customer (username, password) VALUES (?, ?)";
             $stmt_insert = $conn->prepare($insert);
@@ -88,6 +92,7 @@ if (isset($_POST['submit'])) {
                 $error = "Đăng ký tự động thất bại. Vui lòng thử lại.";
             }
             $stmt_insert->close();
+            */
         }
 
         $stmt->close();
