@@ -110,7 +110,7 @@
 
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Telephone: </label>
+            <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Số điện thoại: </label>
             <div class="input-group">
               <input class="form-control" id="contact" type="text" name="contact" placeholder="Nhập số diện thoại" required="">
               <span class="input-group-btn">
@@ -123,7 +123,7 @@
 
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="address"><span class="text-danger" style="margin-right: 5px;">*</span> Adrress: </label>
+            <label for="address"><span class="text-danger" style="margin-right: 5px;">*</span> Địa chỉ: </label>
             <div class="input-group">
               <input class="form-control" id="address" type="text" name="address" placeholder=" Nhập Địa Chỉ" required="">
               <span class="input-group-btn">
