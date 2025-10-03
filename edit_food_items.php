@@ -117,17 +117,17 @@ if(!isset($login_session)){
 
                     <div class="form-group">
                         <label> Tên Món Ăn: </label>
-                        <input type="text" class="form-control" id="dname" name="dname" value="<?php echo htmlspecialchars($row1['name']); ?>" placeholder="Your Food name" required>
+                        <input type="text" class="form-control" id="dname" name="dname" value="<?php echo htmlspecialchars($row1['name']); ?>" placeholder="Nhập tên món ăn" required>
                     </div>
 
                     <div class="form-group">
                         <label> Giá : </label>
-                        <input type="text" class="form-control" id="dprice" name="dprice" value="<?php echo $row1['price']; ?>" placeholder="Your Food Price (INR)" required>
+                        <input type="text" class="form-control" id="dprice" name="dprice" value="<?php echo $row1['price']; ?>" placeholder="Giá (VNĐ)" required>
                     </div>
 
                     <div class="form-group">
                         <label> Mô Tả: </label>
-                        <input type="text" class="form-control" id="ddescription" name="ddescription" value="<?php echo htmlspecialchars($row1['description']); ?>" placeholder="Your Food Description" required>
+                        <input type="text" class="form-control" id="ddescription" name="ddescription" value="<?php echo htmlspecialchars($row1['description']); ?>" placeholder="Nhập mô tả" required>
                     </div>
 
                     <div class="form-group">
