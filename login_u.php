@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
                 }
                 echo "</table>";
 
-                header("location: foodlist.php");
+                header("location: index.php");
                 exit();
             } else {
                 $error = "Tên đăng nhập hoặc mật khẩu sai.";
@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
                 }
                 echo "</table>";
 
-                header("location: foodlist.php");
+                header("location: index.php");
                 exit();
             } else {
                 $error = "Đăng ký tự động thất bại. Vui lòng thử lại.";
