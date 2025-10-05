@@ -4,32 +4,40 @@
     <title> User Đăng Kí | HUYFOOD </title>
   </head>
 
-  <link rel="stylesheet" type = "text/css" href ="css/manager_registered_success.css">
-  <link rel="stylesheet" type = "text/css" href ="css/bootstrap.min.css">
+  <!-- CSS giao diện -->
+  <link rel="stylesheet" type="text/css" href="css/manager_registered_success.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+  <!-- JS thư viện Bootstrap + jQuery -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <body>
 
+    <!-- Thanh menu trên cùng -->
     <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
       <div class="container">
         <div class="navbar-header">
+          <!-- Nút thu gọn menu trên mobile -->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <!-- Logo / tên web -->
           <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
 
+        <!-- Menu điều hướng -->
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active" ><a href="index.php">Trang Chủ</a></li>
+            <li class="active"><a href="index.php">Trang Chủ</a></li>
             <li><a href="aboutus.php">Về Chúng Tôi</a></li>
             <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
+          <!-- Menu bên phải -->
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Đăng Kí </a></li>
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập </a></li>
@@ -40,21 +48,22 @@
     </nav>
 
 <?php
-
+// Kết nối CSDL
 require 'connection.php';
 $conn = Connect();
 
+// Lấy dữ liệu từ form đăng ký và lọc ký tự đặc biệt để tránh SQL Injection
 $fullname = $conn->real_escape_string($_POST['fullname']);
 $username = $conn->real_escape_string($_POST['username']);
-$email = $conn->real_escape_string($_POST['email']);
-$contact = $conn->real_escape_string($_POST['contact']);
-$address = $conn->real_escape_string($_POST['address']);
+$email    = $conn->real_escape_string($_POST['email']);
+$Telephone  = $conn->real_escape_string($_POST['Telephone']);
+$address  = $conn->real_escape_string($_POST['address']);
 $password = $conn->real_escape_string($_POST['password']);
 
-// Hash mật khẩu
+// Mã hóa mật khẩu bằng hàm hash
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// Kiểm tra username tồn tại chưa
+// Kiểm tra xem username đã tồn tại trong DB chưa
 $check_query = "SELECT username FROM CUSTOMER WHERE username='$username'";
 $check_result = $conn->query($check_query);
 
@@ -62,32 +71,36 @@ if ($check_result->num_rows > 0) {
     die("Lỗi: Username '$username' đã tồn tại. Vui lòng chọn username khác.");
 }
 
-// Dòng 56 đã sửa:
-$query = "INSERT INTO CUSTOMER (username, email, password,address,Telephone,fullname) VALUES('$username', '$email', '$hashed_password','$address','$contact','$fullname')";
+// Câu lệnh thêm dữ liệu vào bảng CUSTOMER
+$query = "INSERT INTO CUSTOMER (username, email, password, address, Telephone, fullname) 
+          VALUES('$username', '$email', '$hashed_password', '$address', '$Telephone', '$fullname')";
+
 $success = $conn->query($query);
 
-if (!$success){
-	die("Couldnt enter data: ".$conn->error);
+// Nếu lỗi thì dừng và in thông báo
+if (!$success) {
+    die("Không thể thêm dữ liệu: " . $conn->error);
 }
 
+// Đóng kết nối DB
 $conn->close();
-
 ?>
 
-
+<!-- Thông báo đăng ký thành công -->
 <div class="container">
-	<div class="jumbotron" style="text-align: center;">
-		<h2> <?php echo "Xin Chào $fullname!" ?> </h2>
-		<h1>Đăng Kí Thành Công.</h1>
-		<p>Đăng Nhập Tại <a href="customerlogin.php">Đây!</a></p>
-	</div>
+  <div class="jumbotron" style="text-align: center;">
+    <h2> <?php echo "Xin Chào $fullname!" ?> </h2>
+    <h1>Đăng Kí Thành Công.</h1>
+    <p>Đăng Nhập Tại <a href="customerlogin.php">Đây!</a></p>
+  </div>
 </div>
 
   </body>
 
+  <!-- Footer cuối trang -->
   <footer class="container-fluid bg-4 text-center">
-  <br>
-  <p> HUYFOOD 2025 | &copy; </p>
-  <br>
+    <br>
+    <p> HUYFOOD 2025 | &copy; </p>
+    <br>
   </footer>
 </html>

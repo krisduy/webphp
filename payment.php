@@ -3,18 +3,17 @@ session_start();
 require 'connection.php';
 $conn = Connect();
 
-// Kiểm tra user đã login chưa
+// 🔒 Kiểm tra user đã login chưa (nếu chưa thì về trang login)
 if(!isset($_SESSION['login_user2'])){
     header("location: customerlogin.php");
     exit();
 }
 
-// Lấy customer_id từ session
+// ✅ Lấy customer_id từ session để lưu vào đơn hàng
 if(!isset($_SESSION['login_user2_id'])){
     die("Lỗi: Customer ID chưa được thiết lập. Vui lòng đăng nhập lại.");
 }
 $customer_id = $_SESSION['login_user2_id'];
-
 ?>
 
 <html>
@@ -29,6 +28,7 @@ $customer_id = $_SESSION['login_user2_id'];
 
 <body>
 
+<!-- 🔝 Thanh điều hướng -->
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -54,22 +54,24 @@ $customer_id = $_SESSION['login_user2_id'];
 </nav>
 
 <?php
-$gtotal = 0;
+$gtotal = 0; // tổng tiền đơn hàng
 
-// Kiểm tra giỏ hàng có dữ liệu
+// ✅ Kiểm tra giỏ hàng có dữ liệu
 if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["cart"]) > 0){
 
+    // Duyệt qua từng món trong giỏ
     foreach($_SESSION["cart"] as $keys => $values){
-        // Kiểm tra tồn tại dữ liệu từng món
+        // Lấy dữ liệu từng món ăn từ session
         $food_id = isset($values["food_id"]) ? $values["food_id"] : 0;
         $quantity = isset($values["food_quantity"]) ? $values["food_quantity"] : 1;
         $price = isset($values["food_price"]) ? $values["food_price"] : 0;
-        $manager_id = isset($values["manager_id"]) ? $values["manager_id"] : NULL; // NULL nếu không có
-        $order_date = date('Y-m-d');
+        $manager_id = isset($values["manager_id"]) ? $values["manager_id"] : NULL; // có thể NULL
+        $order_date = date('Y-m-d'); // ngày đặt hàng
 
+        // Tính tổng tiền cho món này
         $gtotal += ($quantity * $price);
 
-        // Chèn đơn hàng vào bảng orders
+        // 💾 Chèn đơn hàng vào DB
         $stmt = $conn->prepare("
             INSERT INTO orders (customer_id, food_id, manager_id, quantity, price, order_date)
             VALUES (?, ?, ?, ?, ?, ?)
@@ -79,13 +81,10 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
             die("Lỗi chuẩn bị câu lệnh: " . $conn->error);
         }
 
-        // Nếu manager_id NULL thì truyền NULL cho MySQL
-        if($manager_id === NULL){
-            $stmt->bind_param("iiiids", $customer_id, $food_id, $manager_id, $quantity, $price, $order_date);
-        } else {
-            $stmt->bind_param("iiiids", $customer_id, $food_id, $manager_id, $quantity, $price, $order_date);
-        }
+        // Gắn tham số cho câu lệnh (manager_id có thể NULL)
+        $stmt->bind_param("iiiids", $customer_id, $food_id, $manager_id, $quantity, $price, $order_date);
 
+        // Thực thi query
         if(!$stmt->execute()){
             die("Lỗi thêm đơn hàng: " . $stmt->error);
         }
@@ -94,6 +93,7 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
     }
 ?>
 
+<!-- 🎉 Giao diện chọn phương thức thanh toán -->
 <div class="container">
   <div class="jumbotron">
     <h1>Chọn Phương Thức Thanh Toán</h1>
@@ -113,10 +113,11 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
 </div>
 
 <?php
-    // Xóa giỏ hàng sau khi thêm đơn
+    // 🧹 Xóa giỏ hàng sau khi tạo đơn hàng thành công
     unset($_SESSION["cart"]);
 } else { 
 ?>
+    <!-- Nếu giỏ hàng trống -->
     <div class="container">
       <div class="jumbotron">
         <h1>Giỏ hàng trống!</h1>
@@ -127,6 +128,7 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
 
 <br><br><br><br><br><br>
 
+<!-- 🔻 Footer -->
 <footer class="container-fluid bg-4 text-center">
   <br>
   <p>HUYFOOD 2025 | &copy;</p>
@@ -135,4 +137,3 @@ if(isset($_SESSION["cart"]) && is_array($_SESSION["cart"]) && count($_SESSION["c
 
 </body>
 </html>
-

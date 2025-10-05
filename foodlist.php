@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Nếu user chưa đăng nhập thì chuyển hướng về trang login user
 if(!isset($_SESSION['login_user2'])){
   header("location: customerlogin.php"); 
 }
@@ -9,12 +10,16 @@ if(!isset($_SESSION['login_user2'])){
 <html>
 <head>
   <title> Danh Mục Món Ăn | HUYFOOD </title>
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/foodlist.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+  <!-- JS -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <style>
+    /* CSS custom cho giao diện */
     .navbar-inverse .navbar-nav > li > a {
       color: #fff;
     }
@@ -23,19 +28,21 @@ if(!isset($_SESSION['login_user2'])){
       color: #ddd !important;
     }
 
+    /* Khung hiển thị từng món */
     .mypanel {
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       padding: 10px;
       margin: 15px 0;
-      height: 420px; /* cố định chiều cao khung */
+      height: 420px; /* cố định chiều cao */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
     }
 
+    /* Ảnh món ăn */
     .mypanel img {
       width: 100%;
       height: 180px;   /* cố định chiều cao ảnh */
@@ -49,16 +56,17 @@ if(!isset($_SESSION['login_user2'])){
       font-size: 14px;
       text-align: center;
     }
-        .mypanel input[type="number"] {
-            width: 60px;
-            margin: 0 auto;
-            text-align: center;
-            display: block;
-        }
 
-        .mypanel .btn-success {
-            margin-top: 10px;
-        }
+    .mypanel input[type="number"] {
+      width: 60px;
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+    }
+
+    .mypanel .btn-success {
+      margin-top: 10px;
+    }
   </style>
 </head>
 
@@ -68,12 +76,6 @@ if(!isset($_SESSION['login_user2'])){
 <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="index.php">HUYFOOD</a>
     </div>
 
@@ -85,6 +87,7 @@ if(!isset($_SESSION['login_user2'])){
       </ul>
 
 <?php
+// Nếu là admin đang login
 if(isset($_SESSION['login_user1'])){
 ?>
       <ul class="nav navbar-nav navbar-right">
@@ -94,23 +97,25 @@ if(isset($_SESSION['login_user1'])){
       </ul>
 <?php
 }
+// Nếu là user đang login
 else if (isset($_SESSION['login_user2'])) {
   ?>
        <ul class="nav navbar-nav navbar-right">
-<li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user2']; ?> </a></li>
         <li class="active"><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Danh Mục Món Ăn </a></li>
-        <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng  (<?php
+        <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng (<?php
+          // Đếm số lượng sản phẩm trong giỏ
           if(isset($_SESSION["cart"])){
-          $count = count($_SESSION["cart"]); 
-          echo "$count"; 
-        }
-          else
+            $count = count($_SESSION["cart"]); 
+            echo "$count"; 
+          } else {
             echo "0";
-          ?>) </a></li>
+          }
+        ?>) </a></li>
 
-        <!--  Thanh tìm kiếm -->
+        <!-- Thanh tìm kiếm -->
         <li style="padding-top:8px;">
-          <form method="GET" action="foodlist.php" class="navbar-form" style="display:flex;  margin:0; padding:0; align-items: center; gap: 5px;">
+          <form method="GET" action="foodlist.php" class="navbar-form" style="display:flex; margin:0; padding:0; align-items: center; gap: 5px;">
             <input type="text" name="search" id="search" 
                    placeholder="Tìm món ăn..."
                    value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" 
@@ -123,6 +128,7 @@ else if (isset($_SESSION['login_user2'])) {
       </ul>
   <?php    
 }
+// Nếu chưa login
 else {
   ?>
   <ul class="nav navbar-nav navbar-right">
@@ -147,13 +153,16 @@ else {
   </div>
 </nav>
 
-<!-- Carousal -->
+<!-- SLIDE -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Nút tròn -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
+
+  <!-- Ảnh -->
   <div class="carousel-inner">
     <div class="item active">
       <img src="images/slide001.jpg" style="width:100%;">
@@ -165,14 +174,17 @@ else {
       <img src="images/slide003.jpg" style="width:100%;">
     </div>
   </div>
+
+  <!-- Nút qua lại -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
-<a class="right carousel-control" href="#myCarousel" data-slide="next">
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
 
+<!-- Banner giới thiệu -->
 <div class="jumbotron">
   <div class="container text-center">
     <h1>HUYFOOD</h1>      
@@ -180,6 +192,7 @@ else {
   </div>
 </div>
 
+<!-- Container hiển thị món ăn -->
 <div class="container" style="width:95%;">
 
 <script>
@@ -193,11 +206,13 @@ suggestionBox.style.border = "1px solid #ccc";
 suggestionBox.style.width = "150px";
 suggestionBox.style.display = "none";
 suggestionBox.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
-suggestionBox.style.marginTop = "5px";   // chỉnh khoảng cách
-suggestionBox.style.zIndex = "9999";     // luôn nổi trên
+suggestionBox.style.marginTop = "5px";
+suggestionBox.style.zIndex = "9999";
 
+// Thêm suggestionBox ngay sau input search
 searchInput.parentNode.appendChild(suggestionBox);
 
+// Bắt sự kiện khi user nhập vào ô search
 searchInput.addEventListener("keyup", function() {
   const query = this.value.toLowerCase().trim();
 
@@ -235,19 +250,22 @@ searchInput.addEventListener("keyup", function() {
 </script>
 
 <?php
+// Kết nối DB
 require 'connection.php';
 $conn = Connect();
 
+// Nếu có tìm kiếm
 $search = "";
 if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
     $search = mysqli_real_escape_string($conn, $_GET['search']);
     $sql = "SELECT * FROM FOOD WHERE name LIKE '%$search%' ORDER BY food_id";
 } else {
-    $sql = "SELECT * FROM food ORDER BY food_id ";
+    $sql = "SELECT * FROM food ORDER BY food_id";
 }
 
 $result = mysqli_query($conn, $sql);
 
+// Nếu có món ăn -> hiển thị
 if (mysqli_num_rows($result) > 0)
 {
   while($row = mysqli_fetch_assoc($result)){
@@ -260,8 +278,9 @@ if (mysqli_num_rows($result) > 0)
       <h5 class="text-info"><?php echo $row["description"]; ?></h5>
       <h5 class="text-danger"><?php echo number_format($row["price"], 0, ',', '.'); ?> VNĐ</h5>
       <h5 class="text-info">Số lượng:
-<input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> 
+        <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> 
       </h5>
+      <!-- Truyền dữ liệu ẩn -->
       <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
       <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
       <input type="hidden" name="hidden_RID" value="<?php echo $row["manager_id"]; ?>">
@@ -272,6 +291,7 @@ if (mysqli_num_rows($result) > 0)
 <?php
   }
 }
+// Nếu không có kết quả
 else {
   echo '<div class="container"><div class="jumbotron"><center><h2 style="color:red;">Không tìm thấy món ăn nào phù hợp.</h2></center></div></div>';
 }

@@ -1,4 +1,4 @@
-
+--Bang quản lý (chỉ 1 bảng)
 CREATE TABLE IF NOT EXISTS manager (
     manager_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(30) UNIQUE NOT NULL,
