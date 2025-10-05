@@ -37,10 +37,7 @@ session_start();
 
 <?php
 if(isset($_SESSION['login_user1'])){
-
 ?>
-
-
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $_SESSION['login_user1']; ?> </a></li>
             <li><a href="view_food_items.php">Trang Admin</a></li>
@@ -68,37 +65,29 @@ else if (isset($_SESSION['login_user2'])) {
   <?php        
 }
 else {
-
   ?>
-
 <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng Kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="customersignup.php"> User Đăng Kí</a></li>
               <li> <a href="managersignup.php"> Admin Đăng Kí</a></li>
-          
             </ul>
             </li>
-
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <li> <a href="customerlogin.php"> User Đăng Nhập</a></li>
               <li> <a href="managerlogin.php"> Admin Đăng Nhập</a></li>
-
             </ul>
             </li>
           </ul>
-
 <?php
 }
 ?>
         </div>
-
       </div>
     </nav>
 
     <div class="wide">
-        
         <div class="tagline">Nhanh <font color="red"><strong>-Ngon</strong></font>-Rẻ<font color="green"><strong><em>-Tiện</em>.</strong></font></div>
     </div>
 

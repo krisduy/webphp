@@ -1,18 +1,21 @@
 <?php
-// mysqli_connect() function opens a new connection to the MySQL server.
+// Gọi file connection.php để kết nối Database
 require 'connection.php';
 $conn = Connect();
 
-session_start();// Starting Session
+// Bắt đầu session để quản lý trạng thái đăng nhập
+session_start();
 
-// Storing Session
-$user_check=$_SESSION['login_user2'];
+// Lấy username đã lưu trong session (khi user đăng nhập thành công)
+$user_check = $_SESSION['login_user2'];
 
-// SQL Query To Fetch Complete Information Of User
+// Truy vấn SQL để lấy thông tin username từ bảng CUSTOMER
 $query = "SELECT username FROM CUSTOMER WHERE username = '$user_check'";
 $ses_sql = mysqli_query($conn, $query);
+
+// Lấy kết quả truy vấn (một dòng dữ liệu) dưới dạng mảng
 $row = mysqli_fetch_assoc($ses_sql);
-$login_session =$row['username'];
 
-
+// Lưu username lấy được từ CSDL vào biến $login_session
+$login_session = $row['username'];
 ?>
