@@ -28,45 +28,95 @@ if(!isset($_SESSION['login_user2'])){
       color: #ddd !important;
     }
 
-    /* Khung hiển thị từng món */
-    .mypanel {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 10px;
-      margin: 15px 0;
-      height: 420px; /* cố định chiều cao */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-    }
+   /* === CARD MÓN ĂN === */
+.mypanel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 15px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  min-height: 450px; /* đồng bộ chiều cao */
+}
 
-    /* Ảnh món ăn */
-    .mypanel img {
-      width: 100%;
-      height: 180px;   /* cố định chiều cao ảnh */
-      object-fit: cover; /* ảnh luôn nằm gọn trong khung */
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
+/* Hiệu ứng hover: nổi lên, đổ bóng */
+.mypanel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
-    .mypanel h5 {
-      margin: 5px 0;
-      font-size: 14px;
-      text-align: center;
-    }
+/* Ảnh món ăn */
+.mypanel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* ảnh tự co để vừa khung */
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
 
-    .mypanel input[type="number"] {
-      width: 60px;
-      margin: 0 auto;
-      text-align: center;
-      display: block;
-    }
+/* Tên món */
+.mypanel h5.text-info:first-of-type {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  min-height: 45px; /* giữ card đều nhau */
+}
 
-    .mypanel .btn-success {
-      margin-top: 10px;
-    }
+/* Mô tả */
+.mypanel h5.text-info:nth-of-type(2) {
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  margin-bottom: 12px;
+  height: 60px;
+  overflow: hidden;
+}
+
+/* Giá */
+.mypanel h5.text-danger {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 10px 0;
+}
+
+/* Input số lượng */
+.mypanel input[type="number"] {
+  width: 70px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  transition: border 0.2s ease;
+}
+
+.mypanel input[type="number"]:focus {
+  border: 1px solid #27ae60;
+  outline: none;
+}
+
+/* Nút thêm giỏ hàng */
+.mypanel .btn-success {
+  background: #27ae60;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.mypanel .btn-success:hover {
+  background: #219150;
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 

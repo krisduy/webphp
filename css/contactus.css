@@ -1,16 +1,20 @@
-body,html {
+body, html {
   height: 100%;
- }
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
   padding-top: 50px;
   background-image: url('headerimg2.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
-
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-#myBtn{
+/* Nút quay lại đầu trang */
+#myBtn {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -18,64 +22,101 @@ body {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: green;
-  color: white;
+  background-color: #27ae60;
+  color: #fff;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 12px 18px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 #myBtn:hover {
-  background-color: darkgreen;
-  color: white;
+  background-color: #1e8449;
+  transform: scale(1.1);
 }
 
-.bg-4{
-  outline: none;
-  background-color: green;
-  color: white;
+/* Footer */
+.bg-4 {
   background-color: #2f2f2f;
   color: #ffffff;
-
+  padding: 20px 0;
+  text-align: center;
 }
 
-footer{
-  display: block;
-}
-
+/* Form liên hệ */
 .form-area {
-  background-color: #FAFAFA;
-  padding: 10px 40px 60px;
-  margin: 10px 0px 60px;
-  border: 1px solid GREY;
-  opacity:0.9;
+  background: #fff;
+  padding: 40px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  opacity: 0.95;
 }
 
+.form-area input,
+.form-area textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
 
-/*styles for heading before form */
+.form-area input:focus,
+.form-area textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 6px rgba(52,152,219,0.5);
+}
+.form-area button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-area button:hover {
+  background: #1e8449;
+}
+
 .heading {
   text-align: center;
-  background-color: grey;
-  padding: 30px;
-  font-size: 40px;
-}
-
-/*for paragrah below form */
-.paragraph1{
-  text-align: center;
-  padding: 60px;
-  font-family: "Times Roman New"
-  font-size: 20px;
-  background-color: black;
+  background: linear-gradient(90deg, #2c3e50, #3498db);
   color: white;
+  padding: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
 }
 
-/*for Heading name "Food Exploria" */
-.edit{
+/* Đoạn text bên dưới */
+.paragraph1 {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 18px;
+  background-color: #000;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Logo / tên thương hiệu */
+.edit {
   text-shadow: 2px 2px 5px lightgreen;
-  color: green;
+  color: #27ae60;
+  font-size: 36px;
+  font-weight: bold;
 }
 
-/* to resize few texts "JUGAD CODE" */
-.edit2{
-  font-size: 20px;
+.edit2 {
+  font-size: 18px;
+  font-weight: 500;
 }

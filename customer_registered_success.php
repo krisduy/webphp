@@ -56,7 +56,7 @@ $conn = Connect();
 $fullname = $conn->real_escape_string($_POST['fullname']);
 $username = $conn->real_escape_string($_POST['username']);
 $email    = $conn->real_escape_string($_POST['email']);
-$Telephone  = $conn->real_escape_string($_POST['Telephone']);
+$contact  = $conn->real_escape_string($_POST['contact']);
 $address  = $conn->real_escape_string($_POST['address']);
 $password = $conn->real_escape_string($_POST['password']);
 
@@ -73,7 +73,7 @@ if ($check_result->num_rows > 0) {
 
 // Câu lệnh thêm dữ liệu vào bảng CUSTOMER
 $query = "INSERT INTO CUSTOMER (username, email, password, address, Telephone, fullname) 
-          VALUES('$username', '$email', '$hashed_password', '$address', '$Telephone', '$fullname')";
+          VALUES('$username', '$email', '$hashed_password', '$address', '$contact', '$fullname')";
 
 $success = $conn->query($query);
 
