@@ -59,8 +59,13 @@ if (!isset($login_session)) {
         <a href="edit_food_items.php" class="list-group-item">Chỉnh Sửa Món Ăn</a>
         <a href="delete_food_items.php" class="list-group-item">Xóa Món Ăn</a>
         <a href="view_order_details.php" class="list-group-item">Xem Chi Tiết Đơn Hàng</a>
-      </div>
+</div>
+     <div style="margin-bottom:15px; text-align:left;">
+    <a href="statistics.php" class="btn btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> Quay lại Trang Chính
+    </a>
     </div>
+</div>
 
     <!-- Nội dung bên phải -->
     <div class="col-xs-9">

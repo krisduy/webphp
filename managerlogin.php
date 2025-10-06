@@ -4,7 +4,7 @@ include('login_m.php');
 
 // Nếu Admin đã đăng nhập rồi thì tự động chuyển về trang quản lý món ăn
 if(isset($_SESSION['login_user1'])){
-  header("location: view_food_items.php");
+  header("location: statistics.php");
 }
 ?>
 
@@ -46,6 +46,7 @@ if(isset($_SESSION['login_user1'])){
             <li ><a href="index.php">Trang Chủ</a></li>
             <li><a href="aboutus.php">Về Chúng Tôi</a></li>
             <li><a href="contactus.php">Liên Hệ</a></li>
+
           </ul>
 
           <!-- Menu phải: Đăng ký / Đăng nhập -->

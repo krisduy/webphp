@@ -66,3 +66,14 @@ CREATE TABLE contact_messages (
         ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+CREATE TABLE statistics (
+    stat_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    stat_date DATE NOT NULL,
+    total_orders INT DEFAULT 0,
+    total_quantity INT DEFAULT 0,
+    total_revenue DECIMAL(15,2) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+);
+

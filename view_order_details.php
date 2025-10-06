@@ -29,7 +29,7 @@ if(!isset($login_session)){
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">HUYFOOD</a></a>
+            <a class="navbar-brand" href="index.php">HUYFOOD</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -37,13 +37,13 @@ if(!isset($login_session)){
                 <li><a href="aboutus.php">Về Chúng Tôi</a></li>
                 <li><a href="contactus.php">Liên Hệ </a></li>
             </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <!-- Hiển thị tên admin đang login -->
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?></a></li>
-      <li class="active"><a href="managerlogin.php">Trang Admin</a></li>
-      <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất</a></li>
-    </ul>
-    </div>
+            <ul class="nav navbar-nav navbar-right">
+              <!-- Hiển thị tên admin đang login -->
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin Chào <?php echo $login_session; ?></a></li>
+              <li class="active"><a href="managerlogin.php">Trang Admin</a></li>
+              <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất</a></li>
+            </ul>
+        </div>
   </div>
 </nav>
 
@@ -53,7 +53,8 @@ if(!isset($login_session)){
     <h1>Xin Chào Admin</h1>
     <p>Hiển Thị Chi Tiết Tất Cả Đơn Hàng !</p>
   </div>
-    <div class="row">
+
+  <div class="row">
     <!-- Menu bên trái -->
     <div class="col-xs-3" style="text-align: center;">
       <div class="list-group">
@@ -63,12 +64,18 @@ if(!isset($login_session)){
         <a href="delete_food_items.php" class="list-group-item">Xóa Món Ăn</a>
         <a href="view_order_details.php" class="list-group-item active">Xem Chi Tiết Đơn Hàng</a>
       </div>
+      <!-- Nút quay lại -->
+      <div style="margin-top:15px; text-align:center;">
+        <a href="statistics.php" class="btn btn-primary btn-block">
+          <span class="glyphicon glyphicon-arrow-left"></span> Quay lại Trang Chính
+        </a>
+      </div>
     </div>
 
-  <!-- Danh sách đơn hàng -->
-  <div class="col-xs-9">
-    <div class="form-area" style="padding: 0px 50px 50px 50px;">
-      <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> DANH SÁCH ĐƠN HÀNG </h3>
+    <!-- Danh sách đơn hàng -->
+    <div class="col-xs-9">
+      <div class="form-area" style="padding: 0px 50px 50px 50px;">
+        <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> DANH SÁCH ĐƠN HÀNG </h3>
 
 <?php
 // Truy vấn đơn hàng + join với bảng food và customer để lấy thêm thông tin
@@ -133,6 +140,7 @@ if(mysqli_num_rows($result) > 0){
   echo "<h4><center>Chưa có đơn hàng nào</center></h4>";
 }
 ?>
+      </div>
     </div>
   </div>
 </div>

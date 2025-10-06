@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) { // Kiểm tra nếu form được submit
             $_SESSION['login_user1']=$username; 
 
             // Chuyển hướng sang trang quản lý món ăn
-            header("location: view_food_items.php"); 
+            header("location: statistics.php"); 
         } else {
             // Nếu không tìm thấy tài khoản
             $error = "Username hoặc Email không tồn tại.";

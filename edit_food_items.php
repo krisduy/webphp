@@ -69,6 +69,11 @@ if(!isset($login_session)){
             <a href="delete_food_items.php" class="list-group-item ">Xóa Món Ăn</a>
             <a href="view_order_details.php" class="list-group-item ">Xem Chi Tiết Đơn Hàng</a>
         </div>
+         <div style="margin-bottom:15px; text-align:left;">
+    <a href="statistics.php" class="btn btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> Quay lại Trang Chính
+    </a>
+</div>
     </div>
 
     <!-- Danh sách món ăn để chọn chỉnh sửa -->
