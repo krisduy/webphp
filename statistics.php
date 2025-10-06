@@ -147,7 +147,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <!-- Content -->
     <div class="content">
-        <h2>📈 Thống kê quản trị</h2>
+        <h2>📈 Thống kê Doanh Thu Theo Năm</h2>
 
         <!-- Stats Overview -->
         <div class="row">
