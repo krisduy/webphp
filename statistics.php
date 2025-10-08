@@ -2,21 +2,33 @@
 include("session_m.php"); // Kiểm tra admin đăng nhập
 include("connection.php"); // Kết nối CSDL
 
-// ================== THỐNG KÊ TỔNG QUAN ==================
-$total_food = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM food"))['total'];
-$total_orders = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM orders"))['total'];
-$total_users = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM customer"))['total'];
+// ======== NHẬN THÔNG TIN TỪ FORM ==========
+$from_date = isset($_GET['from_date']) ? $_GET['from_date'] : null;
+$to_date   = isset($_GET['to_date']) ? $_GET['to_date'] : null;
+$year      = isset($_GET['year']) ? (int)$_GET['year'] : date("Y");
 
-$result_revenue = mysqli_query($conn, "SELECT SUM(price * quantity) AS total, SUM(quantity) AS total_qty FROM orders");
-$revenue_data = mysqli_fetch_assoc($result_revenue);
-$total_revenue = $revenue_data['total'] ?? 0;
+// ======== TẠO ĐIỀU KIỆN LỌC ==========
+$whereClause = "1=1";
+if ($from_date && $to_date) {
+    $whereClause .= " AND order_date BETWEEN '$from_date' AND '$to_date'";
+} else {
+    $whereClause .= " AND YEAR(order_date) = $year";
+}
+
+// ================== THỐNG KÊ TỔNG QUAN ==================
+$total_food   = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM food"))['total'];
+$total_orders = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM orders WHERE $whereClause"))['total'];
+$total_users  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM customer"))['total'];
+
+$result_revenue = mysqli_query($conn, "SELECT SUM(price * quantity) AS total, SUM(quantity) AS total_qty FROM orders WHERE $whereClause");
+$revenue_data   = mysqli_fetch_assoc($result_revenue);
+$total_revenue  = $revenue_data['total'] ?? 0;
 $total_quantity = $revenue_data['total_qty'] ?? 0;
 
 // ================== DOANH THU THEO THÁNG ==================
-$year = isset($_GET['year']) ? (int)$_GET['year'] : date("Y");
 $sql = "SELECT MONTH(order_date) AS month, SUM(price * quantity) AS revenue 
         FROM orders 
-        WHERE YEAR(order_date) = $year 
+        WHERE $whereClause
         GROUP BY MONTH(order_date) 
         ORDER BY month";
 $result = mysqli_query($conn, $sql);
@@ -36,7 +48,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>Thống kê doanh thu - Admin</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -45,7 +56,6 @@ while ($row = mysqli_fetch_assoc($result)) {
             min-height: 100vh;
             display: flex;
         }
-        /* Sidebar */
         .sidebar {
             width: 230px;
             background: #343a40;
@@ -65,7 +75,6 @@ while ($row = mysqli_fetch_assoc($result)) {
             color: #fff;
             border-radius: 5px;
         }
-        /* Content */
         .content {
             flex-grow: 1;
             padding: 30px 40px;
@@ -75,7 +84,6 @@ while ($row = mysqli_fetch_assoc($result)) {
             margin-bottom: 25px;
             color: #333;
         }
-        /* Stats Card */
         .stats-card {
             border-radius: 15px;
             padding: 25px 20px;
@@ -93,7 +101,6 @@ while ($row = mysqli_fetch_assoc($result)) {
         .bg-users { background: #ffc107; color: #212529; }
         .bg-revenue { background: #dc3545; }
         .bg-quantity { background: #6610f2; }
-        /* Chart Container */
         .chart-container {
             background: #fff;
             padding: 25px;
@@ -102,41 +109,37 @@ while ($row = mysqli_fetch_assoc($result)) {
             margin-top: 30px;
         }
         .sidebar-header {
-    text-align: center;
-    padding: 20px 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    margin-bottom: 15px;
-}
-
-.sidebar-header i {
-    font-size: 40px;
-    color: #ffc107;
-    margin-bottom: 10px;
-}
-
-.sidebar-header h5 {
-    color: #fff;
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-.sidebar-header p {
-    color: #adb5bd;
-    margin: 0;
-    font-size: 14px;
-}
-
+            text-align: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 15px;
+        }
+        .sidebar-header i {
+            font-size: 40px;
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .sidebar-header h5 {
+            color: #fff;
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .sidebar-header p {
+            color: #adb5bd;
+            margin: 0;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <!-- Sidebar -->
     <nav class="sidebar">
-
-    <div class="sidebar-header">
-        <i class="bi bi-person-circle"></i>
-        <h5>Xin chào, Admin</h5>
-        <p>Quản trị viên</p>
-    </div>
+        <div class="sidebar-header">
+            <i class="bi bi-person-circle"></i>
+            <h5>Xin chào, Admin</h5>
+            <p>Quản trị viên</p>
+        </div>
         <a href="view_food_items.php">Xem món ăn</a>
         <a href="add_food_items.php">Thêm món ăn</a>
         <a href="edit_food_items.php">Chỉnh sửa món ăn</a>
@@ -147,7 +150,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <!-- Content -->
     <div class="content">
-        <h2>📈 Thống kê Doanh Thu Theo Năm</h2>
+        <h2>📈 Thống kê Doanh Thu</h2>
 
         <!-- Stats Overview -->
         <div class="row">
@@ -185,11 +188,18 @@ while ($row = mysqli_fetch_assoc($result)) {
 
         <!-- Chart -->
         <div class="chart-container">
-            <h4 class="text-center mb-3">Biểu đồ doanh thu theo tháng - Năm <?= $year ?></h4>
-            
-            <!-- Select year -->
+            <h4 class="text-center mb-3">Biểu đồ doanh thu theo tháng</h4>
+
+            <!-- Filter form -->
             <form method="GET" class="text-center mb-3">
-                <label><b>Chọn năm:</b></label>
+                <label><b>Từ ngày:</b></label>
+                <input type="date" name="from_date" value="<?= $from_date ?>">
+                <label><b>Đến ngày:</b></label>
+                <input type="date" name="to_date" value="<?= $to_date ?>">
+                <button type="submit" class="btn btn-sm btn-primary">Lọc</button>
+
+                <br><br>
+                <label><b>Hoặc chọn năm:</b></label>
                 <select name="year" onchange="this.form.submit()">
                     <?php for ($y = date("Y"); $y >= 2020; $y--) {
                         $sel = ($y == $year) ? "selected" : "";
