@@ -1,4 +1,4 @@
---Bang quản lý (chỉ 1 bảng)
+
 CREATE TABLE IF NOT EXISTS manager (
     manager_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(30) UNIQUE NOT NULL,
@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS manager (
     address VARCHAR(100)
 );
 
--- Bảng khách hàng (chỉ 1 bảng)
 CREATE TABLE IF NOT EXISTS customer (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -21,7 +20,6 @@ CREATE TABLE IF NOT EXISTS customer (
 );
 
 
--- Bảng món ăn
 CREATE TABLE food (
     food_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -34,7 +32,6 @@ CREATE TABLE food (
         ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Bảng đơn hàng
 CREATE TABLE orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
@@ -54,7 +51,6 @@ CREATE TABLE orders (
         ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Bảng liên hệ
 CREATE TABLE contact_messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NULL,
