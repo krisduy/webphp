@@ -24,12 +24,17 @@ if (isset($_POST['submit'])) {
     $subject = mysqli_real_escape_string($conn, $_POST['subject']);
     $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-    // Nếu user đã đăng nhập thì lấy customer_id từ session
-    $customer_id = isset($_SESSION['login_user2_id']) ? $_SESSION['login_user2_id'] : NULL;
+   $customer_id = isset($_SESSION['login_user2_id']) ? $_SESSION['login_user2_id'] : "NULL";
 
-    // Câu lệnh insert dữ liệu vào bảng contact_messages
+// Nếu có customer_id thì không để trong dấu nháy, còn NULL thì để nguyên
+if ($customer_id === "NULL") {
     $sql = "INSERT INTO contact_messages (customer_id, name, email, mobile, subject, message) 
-            VALUES ('$customer_id', '$name', '$email', '$mobile', '$subject', '$message')";
+            VALUES (NULL, '$name', '$email', '$mobile', '$subject', '$message')";
+} else {
+    $sql = "INSERT INTO contact_messages (customer_id, name, email, mobile, subject, message) 
+            VALUES ($customer_id, '$name', '$email', '$mobile', '$subject', '$message')";
+}
+
 
     // Thực thi SQL và thông báo kết quả
     if (mysqli_query($conn, $sql)) {
